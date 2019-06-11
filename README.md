@@ -1,41 +1,9 @@
-# paperui
+# [-ิ_•ิ] PaperUI
 
-## Project setup
+vue ui components for Paperlike ( Electronic Ink Screen )
 
-```
-npm install
-```
+## Project Use
 
-### Compiles and hot-reloads for development
+develop **css** with hmr `npm run dev-css`
 
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Run your tests
-
-```
-npm run test
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Run your unit tests
-
-```
-npm run test:unit
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+develop **vue** with hmr `npm run dev-vue`

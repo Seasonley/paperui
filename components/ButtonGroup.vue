@@ -1,10 +1,10 @@
 <template>
-  <button class="p-btn">
+  <div class="p-group">
     <slot></slot>
-  </button>
+  </div>
 </template>
 <script>
 export default {
-  name: "Button"
+  name: "ButtonGroup"
 };
 </script>
