@@ -1,0 +1,31 @@
+.p-switch {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 34px;
+  padding: 0;
+  background: var(--light-gray);
+  border: 2px solid var(--dark);
+  overflow: hidden;
+  vertical-align: middle;
+}
+.p-switch::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: var(--bright);
+  border: 2px solid var(--dark);
+  margin: -2px;
+  transition: all 0.2s;
+  box-shadow: -16px 0 0 black;
+}
+.p-switch[aria-pressed="true"]::after {
+  content: "";
+  margin-left: 16px;
+}
+.p-switch:disabled {
+  opacity: 0.4;
+}
+.p-switch:focus {
+  outline: 4px solid var(--gray);
+}

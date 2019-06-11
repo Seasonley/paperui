@@ -1,0 +1,22 @@
+.p-radio {height: 18px;
+    width: 18px;
+    -webkit-appearance: none;
+    border: 2px solid var(--dark);
+    margin: 0 4px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.p-radio:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: var(--dark);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 2px;
+}
+.p-radio:focus {
+  outline: 0;
+  box-shadow: 0 0 0 4px var(--gray);
+}

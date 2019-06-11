@@ -1,0 +1,16 @@
+.p-progress {
+  height: 16px;
+  border: 2px solid var(--dark);
+  background-color: #e6e6e6;
+  box-sizing:border-box;
+}
+
+.p-progress::-moz-progress-bar {
+  background: var(--dark);
+}
+.p-progress::-webkit-progress-bar {
+  background: var(--light);
+}
+.p-progress::-webkit-progress-value {
+  background: var(--dark);
+}

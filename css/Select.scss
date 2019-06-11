@@ -1,0 +1,62 @@
+.p-combobox-wrapper {
+  display: inline-block;
+  --size: 5;
+  position: relative;
+}
+.p-select-input {
+  width: 100%;
+  padding-right:1.5em;
+}
+.p-listbox,
+.p-option {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.p-listbox {
+  border: 2px solid var(--dark);
+  min-width: 2em;
+  float: left;
+  height: calc(26px * var(--size));
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--bright);
+}
+.p-option {
+  line-height: 26px;
+  padding: 0 1em 0 0.4em;
+}
+.p-option:focus,
+.p-option:hover {
+  background-color: var(--light-gray);
+  outline: 0;
+  font-weight: bolder;
+}
+
+.p-select-list {
+  position: absolute;
+  z-index: 2;
+  margin-top: -2px;
+  display: flex;
+}
+.p-listbox + .p-listbox {
+  margin-left: -2px;
+}
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #705a39;
+}
+.combobox-dropdown{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-image: url(../public/arrow_down.svg);
+    background-size: 17px;
+    background-position: center;
+    padding-left: .5em;
+    vertical-align:middle;
+    top: 0;
+    right: 0;
+    position: absolute;
+    margin: 8px 4px;
+}

@@ -1,0 +1,17 @@
+body {
+  --dark: #000;
+  --shadow: #666;
+  --dark-gray: #999;
+  --gray: #ccc;
+  --light-gray: #f1f1f1;
+  --bright: #fff;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+[disabled] {
+  opacity: 0.3;
+}
+input，button{
+	font-size: 14px;
+  	font-family: sans-serif;
+}

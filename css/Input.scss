@@ -1,0 +1,17 @@
+.p-input {
+  height: 24px;
+  margin: 0;
+  padding: 3px;
+  border: 2px solid var(--dark);
+  text-indent: 0.4em;
+  box-sizing:border-box;
+  display: inline-block;
+}
+.p-input:focus {
+  outline: 4px solid var(--gray);
+  outline-offset: 0;
+}
+.p-input:disabled {
+  background-color: var(--light-gray);
+  cursor: not-allowed;
+}

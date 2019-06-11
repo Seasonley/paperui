@@ -1,0 +1,33 @@
+.table-header {
+  position: sticky;
+  top: 0.5px;
+  z-index: 1;
+}
+.table-footer{
+  position: sticky;
+  bottom: 0.5px;
+  z-index: 1;
+}
+.table-wrapper{
+  max-height:200px;
+  max-width: 500px;
+  overflow: auto;
+  outline:1px solid var(--dark);
+  outline-offset:-1px;
+}
+
+.table{
+    border-collapse: collapse;
+    width: calc(100% - 1px);
+    line-height: 1.5;
+    border-spacing: 0;
+}
+.table td,.table th{
+	border: 1px solid var(--dark);
+	padding:0;
+}
+
+.table-header .table-cell,.table-footer .table-cell{
+	box-shadow: 0 0 0 1px var(--dark);
+	background: var(--light-gray);
+}

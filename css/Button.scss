@@ -1,20 +1,4 @@
-<template>
-  <button class="p-btn">
-    <slot></slot>
-  </button>
-</template>
-<script>
-export default {
-  name: "Button",
-  props: {
-    msg: String
-  }
-};
-</script>
-<style lang="scss">
 .p-btn {
-  margin: 0;
-  padding: 0;
   --color: var(--dark);
   --bgcolor: var(--bright);
   color: var(--color);
@@ -22,31 +6,43 @@ export default {
   border: 0;
   height: 26px;
   padding: 0 0.5em;
-  border: 1px solid var(--dark-gray);
-  box-shadow: 1px 1px 0 var(--shadow);
+  border: 2px solid var(--dark);
+  box-shadow: 1px 1px 0 var(--dark),2px 2px 0 var(--dark);
 }
 .p-btn:disabled {
   box-shadow: none;
   --bgcolor: var(--light-gray);
-  --color: var(--dark-gray);
+  --color: var(--dark);
   cursor: not-allowed;
+  margin-left: 1px;
+  margin-right: -1px;
 }
 .p-btn[kind="primary"] {
   --color: var(--bright);
   --bgcolor: var(--dark);
+      font-weight: bold;
 }
 .p-btn[kind="danger"] {
   --bgcolor: var(--light-gray);
 }
 .p-btn:focus {
   outline: 0;
-  box-shadow: 1px 1px 0 var(--shadow), 0 0 0 4px var(--gray);
+  box-shadow: 1px 1px 0 var(--dark),2px 2px 0 var(--dark), 1px 1px 0 5px var(--gray);
+}
+.p-btn:active {
+  box-shadow: 0 0 0 4px var(--gray);
+  margin: 1px -1px -1px 1px;
+  padding-bottom: 2px;
 }
 .p-btn[size="small"] {
-  height: 1.4em;
+  height: 18px;
 }
 .p-btn[size="large"] {
   font-size: 20px;
   height: 32px;
 }
-</style>
+.p-btn-group {
+  display: inline-block;
+  font-size: 0;
+  word-spacing: -1px;
+}
