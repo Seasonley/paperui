@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve:css": "webpack-dev-server --config _build.config.js",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "dev-css": "webpack-dev-server --config build.dev-css.js",
+    "dev-vue": "vue-cli-service serve build.dev-vue.js",
+    "build-vue": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },

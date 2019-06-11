@@ -32,17 +32,17 @@ div.rail-label.max {
   background-color: #aaa;
 }
 
-.p-slider-thumb{
+.p-slider-thumb {
   display: block;
   width: 12px;
   height: 12px;
   margin: -2px;
   background: var(--bright);
-  border:2px solid var(--dark);
+  border: 2px solid var(--dark);
   position: absolute;
   left: 0;
   top: 0;
 }
-.p-slider-thumb:focus{
+.p-slider-thumb:focus {
   outline: 4px solid var(--gray);
 }

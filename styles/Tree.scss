@@ -13,7 +13,7 @@
   border: 0.2em solid transparent;
 }
 .p-tree-node[aria-selected="false"]:not(.p-tree-leaf)::before {
-  content: ""; //>
+  content: "";
   display: inline-block;
   border: 0.34em solid transparent;
   border-left-color: var(--dark);
@@ -25,7 +25,7 @@
   display: none;
 }
 .p-tree-node[aria-selected="true"]::before {
-  content: ""; //v
+  content: "";
   display: inline-block;
   border: 0.34em solid transparent;
   border-top-color: var(--dark);

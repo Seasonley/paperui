@@ -1,9 +1,0 @@
-
-img[src=""],img:not([src]){
-    background:var(--light-gray) no-repeat center;
-    display:inline-block;
-    filter: contrast(0) brightness(1.6);
-}
-a img{
-    min-width: 0;
-}

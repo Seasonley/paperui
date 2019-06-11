@@ -1,5 +1,5 @@
-.p-carousel{
-  background: rgba(0,0,0,0.1);
+.p-carousel {
+  background: rgba(0, 0, 0, 0.1);
 }
 .p-carousel-item {
   display: none;
@@ -7,7 +7,7 @@
   overflow: hidden;
   width: 100%;
 }
-.p-carousel-pause{
+.p-carousel-pause {
   z-index: -1;
   position: absolute;
   opacity: 0;
@@ -20,8 +20,7 @@
   position: relative;
 }
 
-
-.p-carousel-pause[aria-disabled=true] {
+.p-carousel-pause[aria-disabled="true"] {
   color: #666;
 }
 
@@ -34,9 +33,9 @@
 .p-carousel-image img {
   height: 100%;
   width: 100%;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
-.p-carousel-image a:focus img{
+.p-carousel-image a:focus img {
   border: 2px solid var(--dark);
 }
 
@@ -105,12 +104,10 @@
   border: 2px solid transparent;
 }
 
-
 .p-carousel-control:focus {
   border: 2px solid var(--bright);
   outline: 2px solid var(--dark);
 }
-
 
 .p-carousel-control.previous {
   bottom: 0;
@@ -123,7 +120,8 @@
   width: 40px;
 }
 
-.p-icon-arrow_right,.p-icon-arrow_left{
+.p-icon-arrow_right,
+.p-icon-arrow_left {
   position: absolute;
   display: block;
   top: calc(50% - 20px);
@@ -131,11 +129,11 @@
   width: 40px;
   background-position: center;
   background-size: 80%;
-  filter:invert(1);
+  filter: invert(1);
 }
-.p-icon-arrow_left{
-  background-image: url(../public/chevrons_left.svg)
+.p-icon-arrow_left {
+  background-image: url(./icons/chevrons_left.svg);
 }
-.p-icon-arrow_right{
-  background-image: url(../public/chevrons_right.svg)
+.p-icon-arrow_right {
+  background-image: url(./icons/chevrons_right.svg);
 }

@@ -8,7 +8,7 @@ module.exports = {
   devtool: "inline-source-map",
   mode: "development",
   entry: {
-    app: "./css/_dev.js"
+    app: "./styles/_dev.js"
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -29,9 +29,9 @@ module.exports = {
           "sass-loader" // compiles Sass to CSS, using Node Sass by default
         ]
       },
-       {
-        test: /\.svg/, 
-        loader: 'svg-url-loader'
+      {
+        test: /\.svg/,
+        loader: "svg-url-loader"
       }
     ]
   },

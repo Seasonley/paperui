@@ -1,18 +1,19 @@
-ul[role="menubar"] ul[role="group"]{
-	padding-left: 0;
+ul[role="menubar"] ul[role="group"] {
+  padding-left: 0;
 }
-ul[role="menubar"] li[role="menuitemcheckbox"],ul[role="menubar"] li[role="menuitemradio"]{
-	text-indent: 1.6em;
-    padding-right: 1em;
+ul[role="menubar"] li[role="menuitemcheckbox"],
+ul[role="menubar"] li[role="menuitemradio"] {
+  text-indent: 1.6em;
+  padding-right: 1em;
 }
 ul[role="menubar"] li[role="menuitemcheckbox"]:hover,
 ul[role="menubar"] li[role="menuitemradio"]:hover,
 ul[role="menubar"] li[role="menuitemcheckbox"]:focus,
-ul[role="menubar"] li[role="menuitemradio"]:focus{
-    outline: 2px solid rgba(0, 0, 0, 0.2);
-    background: var(--light-gray);
+ul[role="menubar"] li[role="menuitemradio"]:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+  background: var(--light-gray);
 }
-ul[role="menubar"] li[role="menuitemcheckbox"][aria-checked="true"]::before{
+ul[role="menubar"] li[role="menuitemcheckbox"][aria-checked="true"]::before {
   content: "";
   display: block;
   position: absolute;
@@ -25,7 +26,7 @@ ul[role="menubar"] li[role="menuitemcheckbox"][aria-checked="true"]::before{
   margin: 8px 9px;
 }
 
-ul[role="menubar"] li[role="menuitemradio"][aria-checked="true"]::before{
+ul[role="menubar"] li[role="menuitemradio"][aria-checked="true"]::before {
   content: "";
   display: block;
   position: absolute;

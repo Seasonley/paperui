@@ -5,7 +5,7 @@
 }
 .p-select-input {
   width: 100%;
-  padding-right:1.5em;
+  padding-right: 1.5em;
 }
 .p-listbox,
 .p-option {
@@ -46,17 +46,17 @@ select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #705a39;
 }
-.combobox-dropdown{
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    background-image: url(../public/arrow_down.svg);
-    background-size: 17px;
-    background-position: center;
-    padding-left: .5em;
-    vertical-align:middle;
-    top: 0;
-    right: 0;
-    position: absolute;
-    margin: 8px 4px;
+.combobox-dropdown {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-image: url(./icons/arrow_down.svg);
+  background-size: 17px;
+  background-position: center;
+  padding-left: 0.5em;
+  vertical-align: middle;
+  top: 0;
+  right: 0;
+  position: absolute;
+  margin: 8px 4px;
 }

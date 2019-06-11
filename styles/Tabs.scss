@@ -1,4 +1,3 @@
-
 [role="tablist"] {
   margin: 0 0 -2px;
 }
@@ -24,9 +23,9 @@
 }
 
 [role="tabpanel"] {
-  border:2px solid;
+  border: 2px solid;
 }
 
 [role="tabpanel"]:focus {
-  outline:4px solid var(--gray);
+  outline: 4px solid var(--gray);
 }

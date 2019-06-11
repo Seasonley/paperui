@@ -1,10 +1,11 @@
-.p-radio {height: 18px;
-    width: 18px;
-    -webkit-appearance: none;
-    border: 2px solid var(--dark);
-    margin: 0 4px;
-    border-radius: 50%;
-    vertical-align: middle;
+.p-radio {
+  height: 18px;
+  width: 18px;
+  -webkit-appearance: none;
+  border: 2px solid var(--dark);
+  margin: 0 4px;
+  border-radius: 50%;
+  vertical-align: middle;
 }
 .p-radio:checked::after {
   content: "";
