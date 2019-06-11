@@ -1,0 +1,32 @@
+
+[role="tablist"] {
+  margin: 0 0 -2px;
+}
+
+[role="tab"] {
+  padding: 0.4em;
+  border: 2px solid var(--dark);
+  background: hsl(220, 20%, 94%);
+}
+
+[role="tab"]:hover,
+[role="tab"]:focus,
+[role="tab"][aria-selected="true"] {
+  outline: 4px solid var(--gray);
+}
+
+[role="tab"][aria-selected="true"]:not(:focus):not(:hover) {
+  background: var(--bright);
+  border-bottom-color: var(--bright);
+  outline: 0;
+  border-top-width: 2px;
+  margin-top: -1px;
+}
+
+[role="tabpanel"] {
+  border:2px solid;
+}
+
+[role="tabpanel"]:focus {
+  outline:4px solid var(--gray);
+}
