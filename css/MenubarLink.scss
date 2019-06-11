@@ -76,11 +76,9 @@ ul[role="menubar"] ul[role="menu"] {
 }
 
 ul[role="menubar"] ul[role="menu"] li a {
-  display: inline-block;
-  width: 10em;
-    height: 100%;
-    padding: 0;
-        text-indent: .2em;
+  display: block;
+  height: 100%;
+  padding-right: 2em;
 }
 
 ul[role="menubar"] ul[role="menu"] a[aria-haspopup="true"]::after {
@@ -94,7 +92,9 @@ content: '';
     background-position: center;
     padding:0 1em;
     vertical-align: middle;
-    float: right;
+    position: absolute;
+    right: 0;
+
 }
 
 

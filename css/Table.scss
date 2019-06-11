@@ -42,8 +42,8 @@
     z-index: 1;
 }
 .p-table tr td:first-child .p-table-cell{
-	border-right: 2px solid var(--dark);
-	margin-right: -2px;
+	border: 2px solid var(--dark);
+	margin: -2px;
 }
 .p-table-header .p-table-cell,
 .p-table-footer .p-table-cell{

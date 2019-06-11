@@ -6,7 +6,42 @@ step
 pagination
 menu
 date month range week picker
-upload
+
+<form role="search"> 
+  <input class="p-input" type="search" aria-label="search text" size="20"> 
+  <input class="p-btn" type="submit" value="Search">
+</form> 
+
+<div class="p-slider">
+  <div class="rail-label min">
+    0
+  </div>
+  <div class="rail" style="width: 300px;">
+    <a
+      role="slider"
+      tabindex="0"
+      class="min p-slider-thumb"
+      aria-valuemin="0"
+      aria-valuenow="100"
+      aria-valuetext="$100"
+      aria-valuemax="400"
+      aria-label="Hotel Minimum Price"></a>
+    <a
+      role="slider"
+      tabindex="0"
+      class="max p-slider-thumb"
+      aria-valuemin="0"
+      aria-valuenow="250"
+      aria-valuetext="$250"
+      aria-valuemax="400"
+      aria-label="Hotel Maximum Price"></a>
+  </div>
+  <div class="rail-label max">
+    0
+  </div>
+</div>
+
+<br>
 
 <div class="tabs">
   <div role="tablist" aria-label="Entertainment">
@@ -460,6 +495,11 @@ upload
   <input class="p-input" placeholder="input" />
   <span>warning</span>
   <input class="p-input" placeholder="input" disabled />
+    <input class="p-input-file" type="file" multiple>
+  <label class="p-input-file-wrapper">
+    <input class="p-input-file" type="file" multiple>
+    <span>点击上传文件</span>
+  </label>
 </p>
 
 <br>
