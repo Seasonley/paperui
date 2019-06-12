@@ -1,48 +1,47 @@
-/* CSS Document */
-
 .p-slider {
-  clear: both;
-  padding-top: 0.5em;
-  padding-bottom: 1em;
+  display: inline-flex;
+  margin: 0.5em 0;
+  width: 150px;
 }
 
-div.rail-label {
-  padding-right: 0.5em;
+.p-rail-label-min {
   text-align: right;
-  float: left;
-  width: 4em;
-  position: relative;
-  top: -0.5em;
+  vertical-align: middle;
 }
 
-div.rail-label.max {
-  padding-left: 0.5em;
+.p-rail-label-max {
   text-align: left;
+  vertical-align: middle;
 }
 
-.p-slider .rail {
-  background-color: var(--light-gray);
+.p-rail {
   border: 2px solid var(--dark);
-  position: relative;
   height: 12px;
-  float: left;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 100%;
+  margin: 0 .5em;
+  background: linear-gradient(to right,var(--light-gray), var(--light-gray) var(--min),var(--dark) var(--min), var(--dark) var(--max),var(--light-gray) var(--max), var(--light-gray));
 }
 
-.p-slider .rail.focus {
-  background-color: #aaa;
-}
 
 .p-slider-thumb {
   display: block;
   width: 12px;
   height: 12px;
-  margin: -2px;
   background: var(--bright);
   border: 2px solid var(--dark);
   position: absolute;
-  left: 0;
   top: 0;
+  margin: -2px -8px;
 }
 .p-slider-thumb:focus {
   outline: 4px solid var(--gray);
+}
+.p-slider-thumb-left{
+  left: 25%;
+}
+.p-slider-thumb-right{
+  left: 75%;
 }

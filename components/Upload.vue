@@ -10,7 +10,6 @@ export default {
   },
   props:["kind","props"],
   render: function (createElement,context) {
-    console.log(context)
   	switch(context.props.kind){
   		case "button": return createElement(Upload_Button,context.data)
   		default: return createElement(Upload_Input,context.data)

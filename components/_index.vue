@@ -19,14 +19,16 @@
       <Button kind="danger">danger</Button>
     </Group>
 
-    <Checkbox v-model="val"/>
+    <Checkbox v-model="val" />
     <Checkbox v-model="val" checked/>
-    <Checkbox v-model="val" checked disabled/>
-    <Checkbox v-model="val" disabled/>
-    <Radio  v-model="val"/>
-    <Radio v-model="val" checked/>
-    <Radio v-model="val" checked disabled/>
-    <Radio v-model="val" disabled/>
+    <Checkbox checked disabled/>
+    <Checkbox  disabled/>
+    <Switcher/>
+    <Switcher v-model="val"/>
+    <Radio   name="r1" />
+    <Radio  name="r1" checked/>
+    <Radio  name="r1" checked disabled/>
+    <Radio  name="r1" disabled/>
 
     <Input placeholder="input" v-model="valnum"/>
     <Input placeholder="input" v-model="valnum" disabled/>
@@ -37,13 +39,13 @@
     </Group>
 
     <Progress v-model="valnum"/>
-    <Switcher/>
-    <Switcher v-model="val" @change="change"/>
     <button @click="debug">debug</button>
 
     <Rate v-model="valnum"/>
     <Upload kind="input" @change="change"/>
     <Upload kind="button" @change="change"/>
+    <Slider kind="single" v-model="valnum" min="0.0" max="1.0" step="0.1"/>
+    <Slider kind="double" v-model="valnumarr" min="0.0" max="1.0" step="0.1"/>
   </div>
 </template>
 <script>
@@ -56,18 +58,21 @@ import Progress from './Progress.vue';
 import Switcher from './Switcher.vue';
 import Rate from './Rate.vue';
 import Upload from './Upload.vue';
+import Slider from './Slider.vue';
 export default {
   name: "app",
   data(){return {
     val:true,
-    valnum:0.5
+    valnum:0.5,
+    valnumarr:[0.3,0.6],
+    varstr:"asd",
   }},
   methods: {
     change(e){
       console.log(e)
     },
     debug(){
-      console.log(this.valnum)
+      console.log(this.val)
     }
   },
   components: {
@@ -79,7 +84,8 @@ export default {
     Progress,
     Switcher,
     Rate,
-    Upload
+    Upload,
+    Slider
   }
 };
 </script>

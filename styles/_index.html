@@ -1,4 +1,4 @@
-<h1>paperui</h1>
+<h1>PaperUI</h1>
 todo mixed
 todo landmark
 todo feed
@@ -12,14 +12,14 @@ date month range week picker
   <input class="p-btn" type="submit" value="Search">
 </form> 
 <div class="p-slider">
-  <div class="rail-label min">
+  <span class="p-rail-label-min">
     0
-  </div>
-  <div class="rail" style="width: 300px;">
+  </span>
+  <div class="p-rail" style="--min:25%;--max:75%">
     <a
       role="slider"
       tabindex="0"
-      class="min p-slider-thumb"
+      class="p-slider-thumb p-slider-thumb-left"
       aria-valuemin="0"
       aria-valuenow="100"
       aria-valuetext="$100"
@@ -28,16 +28,16 @@ date month range week picker
     <a
       role="slider"
       tabindex="0"
-      class="max p-slider-thumb"
+      class="p-slider-thumb p-slider-thumb-right"
       aria-valuemin="0"
       aria-valuenow="250"
       aria-valuetext="$250"
       aria-valuemax="400"
       aria-label="Hotel Maximum Price"></a>
   </div>
-  <div class="rail-label max">
+  <span class="p-rail-label-max">
     0
-  </div>
+  </span>
 </div>
 
 <br>
