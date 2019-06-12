@@ -19,26 +19,31 @@
       <Button kind="danger">danger</Button>
     </Group>
 
-    <Checkbox/>
-    <Checkbox checked/>
-    <Checkbox checked disabled/>
-    <Checkbox disabled/>
-    <Radio/>
-    <Radio checked/>
-    <Radio checked disabled/>
-    <Radio disabled/>
+    <Checkbox v-model="val"/>
+    <Checkbox v-model="val" checked/>
+    <Checkbox v-model="val" checked disabled/>
+    <Checkbox v-model="val" disabled/>
+    <Radio  v-model="val"/>
+    <Radio v-model="val" checked/>
+    <Radio v-model="val" checked disabled/>
+    <Radio v-model="val" disabled/>
 
-    <Input placeholder="input"/>
-    <Input placeholder="input" disabled/>
+    <Input placeholder="input" v-model="valnum"/>
+    <Input placeholder="input" v-model="valnum" disabled/>
 
     <Group>
       <Input placeholder="input"/>
       <Button>default</Button>
     </Group>
 
-    <Progress value="0.8"/>
+    <Progress v-model="valnum"/>
     <Switcher/>
-    <Switcher value="true"/>
+    <Switcher v-model="val" @change="change"/>
+    <button @click="debug">debug</button>
+
+    <Rate v-model="valnum"/>
+    <Upload kind="input" @change="change"/>
+    <Upload kind="button" @change="change"/>
   </div>
 </template>
 <script>
@@ -49,12 +54,22 @@ import Radio from "./Radio.vue";
 import Input from './Input.vue';
 import Progress from './Progress.vue';
 import Switcher from './Switcher.vue';
+import Rate from './Rate.vue';
+import Upload from './Upload.vue';
 export default {
   name: "app",
   data(){return {
-
+    val:true,
+    valnum:0.5
   }},
-  methods: {},
+  methods: {
+    change(e){
+      console.log(e)
+    },
+    debug(){
+      console.log(this.valnum)
+    }
+  },
   components: {
     Button,
     Group,
@@ -62,7 +77,9 @@ export default {
     Radio,
     Input,
     Progress,
-    Switcher
+    Switcher,
+    Rate,
+    Upload
   }
 };
 </script>

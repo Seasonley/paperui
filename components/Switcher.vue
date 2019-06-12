@@ -1,23 +1,29 @@
 <template>
-  <button class="p-switch" role="switch" :aria-checked="pressed" @click="togglePressed"></button>
+  <button class="p-switch" role="switch" :aria-checked="actived" @click="toggleActived"></button>
 </template>
 <script>
 export default {
   name: "Switcher",
+  model: {
+    prop: 'value',
+    event: 'change'
+  },
   props:{
   	value:{
-  		type:String,
-  		default:"false"
+  		type:Boolean,
+  		default:false
   	}
   },
   data(){
   	return {
-  		pressed:this.value
+  		actived:this.value
   	}
   },
   methods:{
-  	togglePressed(){
-  		this.pressed=(this.pressed=='false'?'true':'false')
+  	toggleActived(){
+  		this.actived=!this.actived;
+      // this.$emit('update:value', this.actived)
+      this.$emit('change', this.actived)
   	}
   }
 };

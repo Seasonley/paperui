@@ -23,8 +23,10 @@
 .p-input-file-wrapper span {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   text-align: center;
+  pointer-events:none;
 }
 .p-input-file-wrapper .p-input-file {
   color: transparent;

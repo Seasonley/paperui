@@ -1,8 +1,9 @@
 <template>
-  <input type="text" class="p-input">
+  <input type="text" class="p-input" :value="value" @input="$emit('input', $event.target.value)">
 </template>
 <script>
 export default {
-  name: "Input"
+  name: "Input",
+  props:["value"],
 };
 </script>

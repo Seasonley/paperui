@@ -3,6 +3,10 @@
 </template>
 <script>
 export default {
-  name: "Radio"
+  name: "Radio",
+  model: {
+    prop: 'checked',
+    event: 'change'
+  },
 };
 </script>

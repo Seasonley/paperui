@@ -3,6 +3,10 @@
 </template>
 <script>
 export default {
-  name: "Checkbox"
+  name: "Checkbox",
+  model: {
+    prop: 'checked',
+    event: 'change'
+  },
 };
 </script>
