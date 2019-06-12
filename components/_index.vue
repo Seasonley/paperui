@@ -25,10 +25,16 @@
     <Checkbox  disabled/>
     <Switcher/>
     <Switcher v-model="val"/>
-    <Radio   name="r1" />
-    <Radio  name="r1" checked/>
-    <Radio  name="r1" checked disabled/>
-    <Radio  name="r1" disabled/>
+
+    <Radio  name="r1" />
+
+    <Radio  name="r2" checked disabled/>
+    <Radio  name="r2" disabled/>
+
+    <Group>
+      <Radio value="tmp" name="r3" v-model="valstr"/>
+      <Radio value="asd" name="r3" v-model="valstr"/>
+    </Group>{{valstr}}
 
     <Input placeholder="input" v-model="valnum"/>
     <Input placeholder="input" v-model="valnum" disabled/>
@@ -65,7 +71,7 @@ export default {
     val:true,
     valnum:0.5,
     valnumarr:[0.3,0.6],
-    varstr:"asd",
+    valstr:"asd",
   }},
   methods: {
     change(e){
