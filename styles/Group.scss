@@ -1,4 +1,14 @@
-.p-group button+button {
+.p-group :not(:first-child) {
 	margin-left: -2px;
-	position: relative;
+}
+.p-group{
+	display: inline-block;
+}
+.p-group button{
+	box-shadow: none;
+}
+.p-group :focus{
+	
+  z-index: 1;
+  position: relative;
 }

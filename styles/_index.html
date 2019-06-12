@@ -1,4 +1,5 @@
-
+<h1>paperui</h1>
+todo mixed
 todo landmark
 todo feed
 todo grid
@@ -6,12 +7,10 @@ step
 pagination
 menu
 date month range week picker
-
 <form role="search"> 
   <input class="p-input" type="search" aria-label="search text" size="20"> 
   <input class="p-btn" type="submit" value="Search">
 </form> 
-
 <div class="p-slider">
   <div class="rail-label min">
     0
@@ -191,7 +190,8 @@ date month range week picker
       <a id="link" class="item link" href="help.html" tabindex="-1" title="Opens help document in a new window">Help</a>
     </div>
 </div>
-
+<label for="textarea1" class="hidden">Text Sample</label>
+<textarea id="textarea1" rows="20" cols="80" style="font-family: sans-serif; width: 1054px; font-size: 14pt;">Abraham Lincoln's Gettysburg Address</textarea>
 <br>
 
 <ul id="menubar1" role="menubar" aria-label="Text Formatting">
@@ -366,11 +366,12 @@ date month range week picker
           </li>
         </ul>
       </nav>
+      <span id="ex3-label">select label</span>
 <div class="p-combobox-wrapper" role="combobox"  aria-expanded="false" aria-owns="ex3-listbox" aria-haspopup="listbox" id="ex3-combobox">
   <input  class="p-input p-select-input" type="text" aria-autocomplete="both" aria-controls="ex3-listbox" aria-labelledby="ex3-label" id="ex3-input" aria-activedescendant="">
   <div class="combobox-dropdown" id="ex3-combobox-arrow" tabindex="-1" role="button" aria-label="Show vegetable options"></div>
-  <div class="p-select-list" id="p-select-1">
-    <ul class="p-listbox" role="listbox" aria-expanded="true">
+  <div class="p-select-list">
+    <ul class="p-listbox" role="listbox" aria-expanded="true" id="ex3-listbox">
       <li class="p-option" role="option" aria-selected="false">1</li>
       <li class="p-option" role="option">2</li>
       <li class="p-option" role="option">3</li>
@@ -378,25 +379,25 @@ date month range week picker
     </ul>
   </div>
 </div>
-<section class="p-carousel" aria-roledescription="carousel" aria-label="轮播描述" style="height:300px;">
+<section class="p-carousel" aria-label="轮播描述" style="height:300px;">
   <button class="p-btn p-carousel-pause">Stop Carousel</button>
   <div class="p-carousel-inner">
     <a class="previous p-carousel-control" role="button" tabindex="0" aria-controls="myCarousel-items" aria-label="Previous Slide"><i class="p-icon-arrow_left"></i></a>
     <a class="next p-carousel-control" role="button" tabindex="0" aria-controls="myCarousel-items" aria-label="Next Slide"><i class="p-icon-arrow_right"></i></a>
     <div id="myCarousel-items" class="p-carousel-items" aria-live="off">
-      <div class="p-carousel-item active" role="group" aria-roledescription="slide" aria-label="1 of 2">
+      <div class="p-carousel-item active" role="group"  aria-label="1 of 2">
         <div class="p-carousel-image"><a href="#"><img  alt="Walking Tour in Amsterdam"/></a></div>
         <div class="p-carousel-caption">
-          <h3><a href="#" id="carousel-label-1">Dynamic Europe:Amsterdam,Prague,Berlin</a></h3>
+          <a href="#" id="carousel-label-1">Dynamic Europe:Amsterdam,Prague,Berlin</a>
           <div><p>7 pm Tuesday,March 3,on TV</p></div>
         </div>
       </div>
-      <div class="p-carousel-item" role="group" aria-roledescription="slide" aria-label="2 of 2">
+      <div class="p-carousel-item" role="group" aria-label="2 of 2">
         <div class="p-carousel-image">
           <a href="#"><img  alt="Land&#039;s End in Cornwall"/></a>
         </div>
         <div class="p-carousel-caption">
-          <h3><a href="#" id="carousel-label-2">Travel to Southwest England and Paris</a></h3>
+          <a href="#" id="carousel-label-2">Travel to Southwest England and Paris</a>
           <div><p>Sept.14 to Sept.24 or 27</p></div>
         </div>
       </div>
@@ -404,10 +405,9 @@ date month range week picker
   </div>
 </section>
 
-  <div class="p-combobox-wrapper" role="combobox" style="--size:3"  role="combobox">
-    <a class="p-input p-select-input" placeholder="please select" tabindex="0" aria-haspopup="true"
-      aria-autocomplete="list" aria-owns="p-select-1" id="p-input-1" role="button" aria-expanded="true">
-        <span>select</span>
+  <div class="p-combobox-wrapper" style="--size:3" >
+    <a class="p-input p-select-input" placeholder="please select" tabindex="0" aria-haspopup="listbox" aria-owns="p-select-1" role="button" aria-expanded="true">
+        <span role="textbox">select</span>
       </a>
     <div class="combobox-dropdown"></div>
     <div class="p-select-list" id="p-select-1">
@@ -429,25 +429,26 @@ date month range week picker
   
   123ABgjlC中文
 <progress class="p-progress" value="0.5"></progress>123ABgjlC中文
-  <button class="p-switch" role="switch"></button>
-  <button class="p-switch" role="switch" aria-pressed="true"></button>
-  <button class="p-switch" role="switch" aria-pressed="false"></button>
-  <button class="p-switch" role="switch" aria-pressed="true" disabled></button>
-  <button class="p-switch" role="switch" aria-pressed="false" disabled></button>
+  <button class="p-switch" role="switch" aria-label="switch" aria-checked="true"></button>
+  <button class="p-switch" role="switch" aria-label="switch" aria-checked="false"></button>
+  <button class="p-switch" role="switch" aria-label="switch" aria-checked="true" disabled></button>
+  <button class="p-switch" role="switch" aria-label="switch" aria-checked="false" disabled></button>
 
-  <input type="checkbox" class="p-check" name="c1">
-  <input type="checkbox" class="p-check" name="c2" checked>
-  <input type="checkbox" class="p-check" disabled>
-  <input type="checkbox" class="p-check" checked disabled>
+  <input type="checkbox" aria-label="input" class="p-check" name="c1">
+  <input type="checkbox" aria-label="input" class="p-check" name="c2" checked>
+  <input type="checkbox" aria-label="input" class="p-check" disabled>
+  <input type="checkbox" aria-label="input" class="p-check" checked disabled>
+<span id="group_label_1">123ABgjlC中文</span>
+<span role="radiogroup" aria-labelledby="group_label_1">
+  <input type="radio" aria-label="input" class="p-radio" name="r1">
+  <input type="radio" aria-label="input" class="p-radio" name="r1" checked>
+  <input type="radio" aria-label="input" class="p-radio" name="r1" disabled>
+  <input type="radio" aria-label="input" class="p-radio" name="r1" checked disabled>
+</span>
 123ABgjlC中文
-  <input type="radio" class="p-radio" name="r1">
-  <input type="radio" class="p-radio" name="r1" checked>
-  <input type="radio" class="p-radio" disabled>
-  <input type="radio" class="p-radio" checked disabled>
-123ABgjlC中文
-<input type="range" class="p-range">
-<input type="range" class="p-range" disabled>
-<input type="range" class="p-rate" min=0 max=5 step=0.5>
+<input type="range" aria-label="input" class="p-range">
+<input type="range" aria-label="input" class="p-range" disabled>
+<input type="range" aria-label="input" class="p-rate" min=0 max=5 step=0.5>
 
 </p>
 
@@ -492,12 +493,12 @@ date month range week picker
 </p>
 <p>
   <label for="">Your Name</label>
-  <input class="p-input" placeholder="input" />
+  <input class="p-input" placeholder="input" aria-label="label"/>
   <span>warning</span>
-  <input class="p-input" placeholder="input" disabled />
-    <input class="p-input-file" type="file" multiple>
+  <input class="p-input" placeholder="input" aria-label="label" disabled />
+    <input class="p-input-file" type="file" multiple aria-label="label">
   <label class="p-input-file-wrapper">
-    <input class="p-input-file" type="file" multiple>
+    <input class="p-input-file" type="file" multiple aria-label="label">
     <span>点击上传文件</span>
   </label>
 </p>

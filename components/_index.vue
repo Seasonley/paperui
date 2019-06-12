@@ -12,24 +12,57 @@
     <Button type="reset">reset</Button>
     <Button type="button">button</Button>
 
-    <ButtonGroup>
+    <Group>
       <Button>default</Button>
       <Button>default</Button>
       <Button kind="primary">primary</Button>
       <Button kind="danger">danger</Button>
-    </ButtonGroup>
+    </Group>
+
+    <Checkbox/>
+    <Checkbox checked/>
+    <Checkbox checked disabled/>
+    <Checkbox disabled/>
+    <Radio/>
+    <Radio checked/>
+    <Radio checked disabled/>
+    <Radio disabled/>
+
+    <Input placeholder="input"/>
+    <Input placeholder="input" disabled/>
+
+    <Group>
+      <Input placeholder="input"/>
+      <Button>default</Button>
+    </Group>
+
+    <Progress value="0.8"/>
+    <Switcher/>
+    <Switcher value="true"/>
   </div>
 </template>
 <script>
 import Button from "./Button.vue";
-import ButtonGroup from "./ButtonGroup.vue";
+import Group from "./Group.vue";
+import Checkbox from "./Checkbox.vue";
+import Radio from "./Radio.vue";
+import Input from './Input.vue';
+import Progress from './Progress.vue';
+import Switcher from './Switcher.vue';
 export default {
   name: "app",
-  data() {},
+  data(){return {
+
+  }},
   methods: {},
   components: {
     Button,
-    ButtonGroup
+    Group,
+    Checkbox,
+    Radio,
+    Input,
+    Progress,
+    Switcher
   }
 };
 </script>

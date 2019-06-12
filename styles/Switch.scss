@@ -19,7 +19,7 @@
   transition: all 0.2s;
   box-shadow: -16px 0 0 black;
 }
-.p-switch[aria-pressed="true"]::after {
+.p-switch[aria-checked="true"]::after {
   content: "";
   margin-left: 16px;
 }

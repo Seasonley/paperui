@@ -20,8 +20,6 @@
 .p-btn:focus,.p-btn:active {
   box-shadow: 1px 1px 0 var(--dark), 2px 2px 0 var(--dark), 1px 1px 0 4px var(--gray);
   outline: 0;
-  z-index: 1;
-  position: relative;
 }
 .p-btn:active {
   top: 1px;
