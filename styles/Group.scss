@@ -1,13 +1,13 @@
 .p-group :not(:first-child) {
-	margin-left: -2px;
+  margin-left: -2px;
 }
-.p-group{
-	display: inline-block;
+.p-group {
+  display: inline-block;
 }
-.p-group button{
-	box-shadow: none;
+.p-group button {
+  box-shadow: none;
 }
-.p-group :focus{
+.p-group :focus {
   z-index: 2;
   position: relative;
 }

@@ -1,6 +1,10 @@
 <template>
-  <input type="checkbox" class="p-check" :checked="checked"
-      @change="$emit('change', $event.target.checked)">
+  <input
+    type="checkbox"
+    class="p-check"
+    :checked="checked"
+    @change="$emit('change', $event.target.checked)"
+  />
 </template>
 <script>
 export default {
@@ -9,8 +13,8 @@ export default {
     checked: Boolean
   },
   model: {
-    prop: 'checked',
-    event: 'change'
-  },
+    prop: "checked",
+    event: "change"
+  }
 };
 </script>

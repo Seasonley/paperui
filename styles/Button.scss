@@ -17,8 +17,10 @@
 .p-btn[kind="danger"] {
   --bgcolor: var(--gray);
 }
-.p-btn:focus,.p-btn:active {
-  box-shadow: 1px 1px 0 var(--dark), 2px 2px 0 var(--dark), 1px 1px 0 4px var(--gray);
+.p-btn:focus,
+.p-btn:active {
+  box-shadow: 1px 1px 0 var(--dark), 2px 2px 0 var(--dark),
+    1px 1px 0 4px var(--gray);
   outline: 0;
   position: relative;
 }

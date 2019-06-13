@@ -20,38 +20,54 @@
     </Group>
 
     <Checkbox v-model="val" />
-    <Checkbox v-model="val" checked/>
-    <Checkbox checked disabled/>
-    <Checkbox  disabled/>
-    <Switcher/>
-    <Switcher v-model="val"/>
+    <Checkbox v-model="val" checked />
+    <Checkbox checked disabled />
+    <Checkbox disabled />
+    <Switcher />
+    <Switcher v-model="val" />
 
-    <Radio  name="r1" />
+    <Radio name="r1" />
 
-    <Radio  name="r2" checked disabled/>
-    <Radio  name="r2" disabled/>
-
-    <Group>
-      <Radio value="tmp" name="r3" v-model="valstr"/>
-      <Radio value="asd" name="r3" v-model="valstr"/>
-    </Group>{{valstr}}
-
-    <Input placeholder="input" v-model="valnum"/>
-    <Input placeholder="input" v-model="valnum" disabled/>
+    <Radio name="r2" checked disabled />
+    <Radio name="r2" disabled />
 
     <Group>
-      <Input placeholder="input"/>
+      <Radio value="tmp" name="r3" v-model="valstr" />
+      <Radio value="asd" name="r3" v-model="valstr" /> </Group
+    >{{ valstr }}
+
+    <Input placeholder="input" v-model="valnum" />
+    <Input placeholder="input" v-model="valnum" disabled />
+
+    <Group>
+      <Input placeholder="input" />
       <Button>default</Button>
     </Group>
 
-    <Progress v-model="valnum"/>
+    <Progress v-model="valnum" />
     <button @click="debug">debug</button>
 
-    <Rate v-model="valnum"/>
-    <Upload kind="input" @change="change"/>
-    <Upload kind="button" @change="change"/>
-    <Slider kind="single" v-model="valnum" min="0.0" max="1.0" step="0.1"/>
-    <Slider kind="double" v-model="valnumarr" min="0.0" max="1.0" step="0.1"/>
+    <Rate v-model="valnum" />
+    <Upload kind="input" @change="change" />
+    <Upload kind="button" @change="change" />
+    <Slider kind="single" v-model="valnum" min="0" max="1" step="0.1" />
+    <Slider
+      kind="double"
+      v-model="valnumarr"
+      :min="valslider.min"
+      :max="valslider.max"
+      :step="valslider.step"
+    />
+    <Slider
+      kind="double"
+      v-model="valnumarr"
+      :min="valslider.min"
+      :max="valslider.max"
+      :step="valslider.step"
+      unit="元"
+    />
+    {{ valnumarr }}
+    {{ valslider }}
   </div>
 </template>
 <script>
@@ -59,26 +75,29 @@ import Button from "./Button.vue";
 import Group from "./Group.vue";
 import Checkbox from "./Checkbox.vue";
 import Radio from "./Radio.vue";
-import Input from './Input.vue';
-import Progress from './Progress.vue';
-import Switcher from './Switcher.vue';
-import Rate from './Rate.vue';
-import Upload from './Upload.vue';
-import Slider from './Slider.vue';
+import Input from "./Input.vue";
+import Progress from "./Progress.vue";
+import Switcher from "./Switcher.vue";
+import Rate from "./Rate.vue";
+import Upload from "./Upload.vue";
+import Slider from "./Slider.vue";
 export default {
   name: "app",
-  data(){return {
-    val:true,
-    valnum:0.5,
-    valnumarr:[0.3,0.6],
-    valstr:"asd",
-  }},
+  data() {
+    return {
+      val: true,
+      valnum: 0.5,
+      valnumarr: [0.3, 0.6],
+      valslider: { min: 0, max: 1, step: 0.1 },
+      valstr: "asd"
+    };
+  },
   methods: {
-    change(e){
-      console.log(e)
+    change(e) {
+      console.log(e);
     },
-    debug(){
-      console.log(this.val)
+    debug() {
+      console.log(this.val);
     }
   },
   components: {
