@@ -69,7 +69,8 @@
       :step="valslider.step"
       unit="元"
     />
-    <Cascader />
+    <Cascader :options="options" disabled/>
+    <Cascader :options="options"/>
   </div>
 </template>
 <script>
@@ -92,7 +93,31 @@ export default {
       valnum: 0.5,
       valnumarr: [0.3, 0.6],
       valslider: { min: 0, max: 1, step: 0.1 },
-      valstr: "asd"
+      valstr: "asd",
+      options: [{
+        value: 'zhejiang',
+        label: 'Zhejiang',
+        children: [{
+          value: 'hangzhou',
+          label: 'Hangzhou',
+          children: [{
+            value: 'xihu',
+            label: 'West Lake',
+          }],
+        }],
+      }, {
+        value: 'jiangsu',
+        label: 'Jiangsu',
+        disabled: true,
+        children: [{
+          value: 'nanjing',
+          label: 'Nanjing',
+          children: [{
+            value: 'zhonghuamen',
+            label: 'Zhong Hua Men',
+          }],
+        }],
+      }]
     };
   },
   methods: {

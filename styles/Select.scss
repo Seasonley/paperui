@@ -3,6 +3,13 @@
   --size: 5;
   position: relative;
 }
+.p-combobox-wrapper[disabled] .p-select-list {
+  display: none;
+}
+.p-combobox-wrapper[disabled] * {
+  pointer-events: none;
+}
+
 .p-select-input {
   width: 100%;
   padding-right: 1.5em;

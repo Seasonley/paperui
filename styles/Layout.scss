@@ -1,0 +1,146 @@
+div[p-row] {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 1px;
+  clear: both;
+}
+
+div[p-col] {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  clear: none;
+  width: calc(100% * var(--col));
+  min-height: 1px;
+}
+
+@media screen and (max-width: 480px) {
+  div[p-col] {
+    display: var(--xs-d);
+    visibility: var(--xs-v);
+  }
+}
+
+@media screen and (min-width: 481px) {
+  div[p-col] {
+    --col: calc(var(--sm) / 12);
+    display: var(--sm-d);
+    visibility: var(--sm-v);
+  }
+}
+
+@media screen and (min-width: 721px) {
+  div[p-col] {
+    --col: calc(var(--md) / 12);
+    display: var(--md-d);
+    visibility: var(--md-v);
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  div[p-col] {
+    --col: calc(var(--lg) / 12);
+    display: var(--lg-d);
+    visibility: var(--lg-v);
+  }
+}
+
+[p-flex] {
+  display: flex;
+}
+
+[p-flex~="row"] {
+  flex-direction: row;
+}
+
+[p-flex~="-row"] {
+  flex-direction: row-reverse;
+}
+
+[p-flex~="col"] {
+  flex-direction: column;
+}
+
+[p-flex~="-col"] {
+  flex-direction: column-reverse;
+}
+
+[p-flex~="!wrap"] {
+  flex-wrap: nowrap;
+}
+
+[p-flex~="+wrap"] {
+  flex-wrap: wrap;
+}
+
+[p-flex~="-wrap"] {
+  flex-wrap: wrap-reverse;
+}
+
+[p-flex~="jc-100"] {
+  justify-content: flex-start;
+}
+
+[p-flex~="jc-001"] {
+  justify-content: flex-end;
+}
+
+[p-flex~="jc-010"] {
+  justify-content: center;
+}
+
+[p-flex~="jc-101"] {
+  justify-content: space-between;
+}
+
+[p-flex~="jc-000"] {
+  justify-content: space-around;
+}
+
+[p-flex~="ai-100"] {
+  align-items: flex-start;
+}
+
+[p-flex~="ai-001"] {
+  align-items: flex-end;
+}
+
+[p-flex~="ai-010"] {
+  align-items: center;
+}
+
+[p-flex~="ai-101"] {
+  align-items: space-between;
+}
+
+[p-flex~="ai-000"] {
+  align-items: baseline;
+}
+
+[p-flex~="ai-111"] {
+  align-items: stretch;
+}
+
+[p-flex~="ac-100"] {
+  align-content: flex-start;
+}
+
+[p-flex~="ac-001"] {
+  align-content: flex-end;
+}
+
+[p-flex~="ac-010"] {
+  align-content: center;
+}
+
+[p-flex~="ac-101"] {
+  align-content: space-between;
+}
+
+[p-flex~="ac-000"] {
+  align-content: space-around;
+}
+
+[p-flex~="ai-111"] {
+  align-content: stretch;
+}

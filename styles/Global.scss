@@ -8,11 +8,11 @@ body {
   font-size: 14px;
   font-family: sans-serif;
 }
-[disabled] {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
 input，button {
   font-size: 14px;
   font-family: sans-serif;
+}
+[disabled] {
+  opacity: 0.3;
+  cursor: not-allowed !important;
 }

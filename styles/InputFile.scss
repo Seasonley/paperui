@@ -34,3 +34,6 @@
 .p-input-file-wrapper .p-input-file::-webkit-file-upload-button {
   opacity: 0;
 }
+input[type="file"] {
+  cursor: pointer;
+}
