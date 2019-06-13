@@ -1,16 +1,68 @@
-.p-progress {
+.p-progress:not([kind="circle"]) {
   height: 16px;
   border: 2px solid var(--dark);
   background-color: #e6e6e6;
   box-sizing: border-box;
 }
 
-.p-progress::-moz-progress-bar {
+.p-progress:not([kind="circle"])::-moz-progress-bar {
   background: var(--dark);
 }
-.p-progress::-webkit-progress-bar {
+.p-progress:not([kind="circle"])::-webkit-progress-bar {
   background: var(--light);
 }
-.p-progress::-webkit-progress-value {
+.p-progress:not([kind="circle"])::-webkit-progress-value {
   background: var(--dark);
+}
+.p-progress[kind="circle"]{
+    width: 128px; height: 128px;
+    background-color: white;
+    clip-path: circle();
+    position: relative;
+    --bkg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500px' height='500px'%3E%3Ccircle cx='50%25' cy='50%25' r='50%25' fill='black'/%3E%3Ccircle cx='50%25' cy='50%25' r='calc(50%25 - (3%25 * 1))' fill='white'/%3E%3C/svg%3E");
+}
+
+.p-progress[kind="circle"]::-webkit-progress-bar,
+.p-progress[kind="circle"]::-webkit-progress-value{
+    background-color:transparent;
+}
+.p-progress[kind="circle"]::-webkit-progress-value{
+
+    width: 50%!important;
+    display: block;
+    height: 100%;
+    background: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: right;
+    transform: rotate(calc(3.6deg * var(--percent)));
+    box-shadow: 0 0 0 99px white;
+}
+
+.p-progress[kind="circle"]::after{
+	content: "";
+    height: 100%;
+    display: block;
+    background: var(--bkg);
+    position: absolute;
+    background-size: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    mix-blend-mode: lighten;
+}
+.p-progress[kind="circle"]::before{
+    content: "";
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: #000000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    mix-blend-mode: var(--mix);
+    box-shadow: 0 0 0 99px white;
+    z-index:1;
 }

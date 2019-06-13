@@ -36,5 +36,5 @@
 .p-rate::-webkit-slider-container,
 .p-rate::-webkit-media-slider-container {
   background-color: var(--dark);
-  mask-image: url(./icons/star.svg);
+  -webkit-mask-image: url(./icons/star.svg);
 }

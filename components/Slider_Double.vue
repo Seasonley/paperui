@@ -15,10 +15,10 @@
         :aria-valuemax="valuenow[1]"
         :aria-label="label"
         @mousedown="touchStart"
-        @keydown.right="keyMove('min', step)"
-        @keydown.left="keyMove('min', -step)"
-        @keydown.up="keyMove('min', step)"
-        @keydown.down="keyMove('min', -step)"
+        @keydown.right.prevent.stop="keyMove('min', step)"
+        @keydown.left.prevent.stop="keyMove('min', -step)"
+        @keydown.up.prevent.stop="keyMove('min', step)"
+        @keydown.down.prevent.stop="keyMove('min', -step)"
         ref="thumbLeft"
       ></a>
       <a
@@ -31,10 +31,10 @@
         :aria-valuemax="max"
         :aria-label="label"
         @mousedown="touchStart"
-        @keydown.right="keyMove('max', step)"
-        @keydown.left="keyMove('max', -step)"
-        @keydown.up="keyMove('max', step)"
-        @keydown.down="keyMove('max', -step)"
+        @keydown.right.prevent.stop="keyMove('max', step)"
+        @keydown.left.prevent.stop="keyMove('max', -step)"
+        @keydown.up.prevent.stop="keyMove('max', step)"
+        @keydown.down.prevent.stop="keyMove('max', -step)"
         ref="thumbRight"
       ></a>
     </div>
@@ -62,13 +62,9 @@ export default {
     event: "change"
   },
   data() {
-    var valuenow;
-    if (isNumber(this.value)) {
-      valuenow = [this.min, this.value];
-    } else {
-      valuenow = this.value;
-    }
-    return { valuenow: valuenow };
+    return {
+      valuenow: isNumber(this.value) ? [this.min, this.value] : this.value
+    };
   },
   computed: {
     pctmin() {
@@ -105,7 +101,7 @@ export default {
       }
       Dom.clearSelection();
     },
-    touchEnd(e) {
+    touchEnd() {
       thumb = rail = null;
       Dom.off("move", this.touchMove);
     },
@@ -121,14 +117,14 @@ export default {
     updateValue(thumb, value) {
       value = fixed(value, fix);
       var data;
-      if (!isNumber(this.value)) {
+      if (isNumber(this.value)) {
+        data = value;
+        this.valuenow = [this.min, value];
+      } else {
         this.valuenow = data =
           thumb === "min"
             ? [value, this.valuenow[1]]
             : [this.valuenow[0], value];
-      } else {
-        data = value;
-        this.valuenow = [this.min, value];
       }
       this.$emit("change", data);
     }

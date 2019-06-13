@@ -2,7 +2,7 @@
   <button
     class="p-switch"
     role="switch"
-    :aria-checked="value"
+    :aria-checked="value ? 'true' : 'false'"
     @click="$emit('input', !value)"
   ></button>
 </template>

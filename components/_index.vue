@@ -45,6 +45,9 @@
     </Group>
 
     <Progress v-model="valnum" />
+    <Progress v-model="valnum" kind="circle"/>
+    <Progress v-model="valnum" kind="circle" border="3"/>
+    <Progress v-model="valnum" kind="circle" border="5"/>
     <button @click="debug">debug</button>
 
     <Rate v-model="valnum" />
@@ -66,8 +69,7 @@
       :step="valslider.step"
       unit="元"
     />
-    {{ valnumarr }}
-    {{ valslider }}
+    <Cascader />
   </div>
 </template>
 <script>
@@ -81,6 +83,7 @@ import Switcher from "./Switcher.vue";
 import Rate from "./Rate.vue";
 import Upload from "./Upload.vue";
 import Slider from "./Slider.vue";
+import Cascader from "./Cascader.vue";
 export default {
   name: "app",
   data() {
@@ -110,7 +113,8 @@ export default {
     Switcher,
     Rate,
     Upload,
-    Slider
+    Slider,
+    Cascader
   }
 };
 </script>

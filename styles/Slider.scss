@@ -53,7 +53,8 @@
 .p-slider-thumb-right {
   left: var(--max);
 }
-.p-slider-thumb:active:after {
+.p-slider-thumb:active:after,
+.p-slider-thumb:focus:after {
   content: attr(aria-valuenow);
   align-self: center;
   color: var(--bright);
