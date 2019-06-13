@@ -7,11 +7,13 @@
 .p-rail-label-min {
   text-align: right;
   vertical-align: middle;
+  padding-right: 1em;
 }
 
 .p-rail-label-max {
   text-align: left;
   vertical-align: middle;
+  padding-left: 1em;
 }
 
 .p-rail {
@@ -21,7 +23,6 @@
   vertical-align: middle;
   position: relative;
   width: 100%;
-  margin: 0 1em;
   background: linear-gradient(
     to right,
     var(--light-gray),
@@ -32,7 +33,6 @@
     var(--light-gray)
   );
 }
-
 .p-slider-thumb {
   display: flex;
   flex-direction: column;

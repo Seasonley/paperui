@@ -53,7 +53,7 @@
     <Slider kind="single" v-model="valnum" min="0" max="1" step="0.1" />
     <Slider
       kind="double"
-      v-model="valnumarr"
+      v-model="valnum"
       :min="valslider.min"
       :max="valslider.max"
       :step="valslider.step"
@@ -97,7 +97,7 @@ export default {
       console.log(e);
     },
     debug() {
-      console.log(this.val);
+      console.dir(this.valnum instanceof Array);
     }
   },
   components: {

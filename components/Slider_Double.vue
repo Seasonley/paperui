@@ -5,13 +5,14 @@
     </span>
     <div class="p-rail" :style="`--min:${pctmin}%;--max:${pctmax}%`" ref="rail">
       <a
+        v-if="!isNumber(this.value)"
         role="slider"
         tabindex="0"
         class="p-slider-thumb p-slider-thumb-left"
         :aria-valuemin="min"
-        :aria-valuenow="value[0]"
-        :aria-valuetext="value[0] + unit"
-        :aria-valuemax="value[1]"
+        :aria-valuenow="valuenow[0]"
+        :aria-valuetext="valuenow[0] + unit"
+        :aria-valuemax="valuenow[1]"
         :aria-label="label"
         @mousedown="touchStart"
         @keydown.right="keyMove('min', step)"
@@ -24,9 +25,9 @@
         role="slider"
         tabindex="0"
         class="p-slider-thumb p-slider-thumb-right"
-        :aria-valuemin="value[0]"
-        :aria-valuenow="value[1]"
-        :aria-valuetext="value[1] + unit"
+        :aria-valuemin="valuenow[0]"
+        :aria-valuenow="valuenow[1]"
+        :aria-valuetext="valuenow[1] + unit"
         :aria-valuemax="max"
         :aria-label="label"
         @mousedown="touchStart"
@@ -44,7 +45,7 @@
 </template>
 <script>
 import { Dom } from "../utils/Dom.js";
-import { percent, fixed } from "../utils/Math.js";
+import { percent, fixed, isNumber } from "../utils/Math.js";
 var thumb, rail, fix;
 export default {
   name: "Slider_Double",
@@ -60,18 +61,31 @@ export default {
     prop: "value",
     event: "change"
   },
+  data() {
+    var valuenow;
+    if (isNumber(this.value)) {
+      valuenow = [this.min, this.value];
+    } else {
+      valuenow = this.value;
+    }
+    return { valuenow: valuenow };
+  },
   computed: {
     pctmin() {
-      return percent(this.value[0] - this.min, this.max - this.min);
+      return percent(this.valuenow[0] - this.min, this.max - this.min);
     },
     pctmax() {
-      return percent(this.value[1] - this.min, this.max - this.min);
+      return percent(
+        isNumber(this.value) ? this.value : this.valuenow[1] - this.min,
+        this.max - this.min
+      );
     }
   },
   beforeMount() {
     fix = this.step.toString().split(".")[1].length;
   },
   methods: {
+    isNumber: isNumber,
     touchStart(e) {
       rail = this.$refs.rail;
       thumb = this.$refs.thumbLeft === e.target ? "min" : "max";
@@ -96,20 +110,27 @@ export default {
       Dom.off("move", this.touchMove);
     },
     keyMove(thumb, vector) {
-      var val = this.value[thumb == "min" ? 0 : 1] + vector;
+      var val = this.valuenow[thumb == "min" ? 0 : 1] + vector;
       if (
-        (thumb == "max" && this.value[0] <= val && val <= this.max) ||
-        (thumb == "min" && this.min <= val && val <= this.value[1])
+        (thumb == "max" && this.valuenow[0] <= val && val <= this.max) ||
+        (thumb == "min" && this.min <= val && val <= this.valuenow[1])
       ) {
         this.updateValue(thumb, val);
       }
     },
     updateValue(thumb, value) {
       value = fixed(value, fix);
-      this.$emit(
-        "change",
-        thumb === "min" ? [value, this.value[1]] : [this.value[0], value]
-      );
+      var data;
+      if (!isNumber(this.value)) {
+        this.valuenow = data =
+          thumb === "min"
+            ? [value, this.valuenow[1]]
+            : [this.valuenow[0], value];
+      } else {
+        data = value;
+        this.valuenow = [this.min, value];
+      }
+      this.$emit("change", data);
     }
   }
 };
