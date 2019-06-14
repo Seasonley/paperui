@@ -69,11 +69,25 @@
       :step="valslider.step"
       unit="元"
     />
-    <ComboBox :options="options" disabled placeholder="1111" />
-    <ComboBox :options="options" kind="simple" size="3" placeholder="2222" /> -
+    <ComboBox :options="options" disabled placeholder="1111" multiple />
+    <ComboBox
+      :options="options"
+      kind="simple"
+      size="3"
+      placeholder="2222"
+      multiple
+    />
+    -
     <ComboBox :options="options" kind="dropdown" multiple placeholder="3333" />
-    - <ComboBox :options="options" kind="dropdownlist" placeholder="4444" /> -
-    <ComboBox :options="options" kind="simple" placeholder="5555" /> -
+    -
+    <ComboBox
+      :options="options"
+      kind="dropdownlist"
+      placeholder="4444"
+      multiple
+    />
+    -
+    <ComboBox :options="options" kind="simple" placeholder="5555" multiple /> -
   </div>
 </template>
 <script>
