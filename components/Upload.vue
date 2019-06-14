@@ -8,7 +8,7 @@ export default {
     prop: "value",
     event: "change"
   },
-  props: ["kind", "props"],
+  props: ["kind"],
   render: function(createElement, context) {
     switch (context.props.kind) {
       case "button":

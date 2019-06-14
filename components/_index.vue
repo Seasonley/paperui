@@ -45,14 +45,14 @@
     </Group>
 
     <Progress v-model="valnum" />
-    <Progress v-model="valnum" kind="circle"/>
-    <Progress v-model="valnum" kind="circle" border="3"/>
-    <Progress v-model="valnum" kind="circle" border="5"/>
+    <Progress v-model="valnum" kind="circle" />
+    <Progress v-model="valnum" kind="circle" border="3" />
+    <Progress v-model="valnum" kind="circle" border="5" />
     <button @click="debug">debug</button>
 
     <Rate v-model="valnum" />
     <Upload kind="input" @change="change" />
-    <Upload kind="button" @change="change" />
+    <Upload kind="button" label="点击上传文件..." @change="change" />
     <Slider kind="single" v-model="valnum" min="0" max="1" step="0.1" />
     <Slider
       kind="double"
@@ -69,8 +69,11 @@
       :step="valslider.step"
       unit="元"
     />
-    <Cascader :options="options" disabled/>
-    <Cascader :options="options"/>
+    <ComboBox :options="options" disabled placeholder="1111" />
+    <ComboBox :options="options" kind="simple" size="3" placeholder="2222" /> -
+    <ComboBox :options="options" kind="dropdown" multiple placeholder="3333" />
+    - <ComboBox :options="options" kind="dropdownlist" placeholder="4444" /> -
+    <ComboBox :options="options" kind="simple" placeholder="5555" /> -
   </div>
 </template>
 <script>
@@ -84,7 +87,7 @@ import Switcher from "./Switcher.vue";
 import Rate from "./Rate.vue";
 import Upload from "./Upload.vue";
 import Slider from "./Slider.vue";
-import Cascader from "./Cascader.vue";
+import ComboBox from "./ComboBox.vue";
 export default {
   name: "app",
   data() {
@@ -94,30 +97,41 @@ export default {
       valnumarr: [0.3, 0.6],
       valslider: { min: 0, max: 1, step: 0.1 },
       valstr: "asd",
-      options: [{
-        value: 'zhejiang',
-        label: 'Zhejiang',
-        children: [{
-          value: 'hangzhou',
-          label: 'Hangzhou',
-          children: [{
-            value: 'xihu',
-            label: 'West Lake',
-          }],
-        }],
-      }, {
-        value: 'jiangsu',
-        label: 'Jiangsu',
-        disabled: true,
-        children: [{
-          value: 'nanjing',
-          label: 'Nanjing',
-          children: [{
-            value: 'zhonghuamen',
-            label: 'Zhong Hua Men',
-          }],
-        }],
-      }]
+      options: [
+        {
+          value: "zhejiang",
+          label: "Zhejiang",
+          children: [
+            {
+              value: "hangzhou",
+              label: "Hangzhou",
+              children: [
+                {
+                  value: "xihu",
+                  label: "West Lake"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          value: "jiangsu",
+          label: "Jiangsu",
+          disabled: true,
+          children: [
+            {
+              value: "nanjing",
+              label: "Nanjing",
+              children: [
+                {
+                  value: "zhonghuamen",
+                  label: "Zhong Hua Men"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     };
   },
   methods: {
@@ -139,7 +153,7 @@ export default {
     Rate,
     Upload,
     Slider,
-    Cascader
+    ComboBox
   }
 };
 </script>

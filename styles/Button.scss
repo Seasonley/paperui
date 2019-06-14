@@ -8,6 +8,7 @@
   padding: 0 0.5em;
   border: 2px solid var(--dark);
   box-shadow: 1px 1px 0 var(--dark), 2px 2px 0 var(--dark);
+  cursor: pointer;
 }
 .p-btn[kind="primary"] {
   --color: var(--bright);
@@ -43,5 +44,4 @@
 }
 .p-btn:hover {
   filter: brightness(0.92);
-  cursor: pointer;
 }

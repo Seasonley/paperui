@@ -1,7 +1,7 @@
 <template>
   <div class="p-slider">
     <span class="p-rail-label-min">
-      20
+      {{ min }}
     </span>
     <div class="p-rail" :style="`--min:${pctmin}%;--max:${pctmax}%`" ref="rail">
       <a
@@ -39,12 +39,12 @@
       ></a>
     </div>
     <span class="p-rail-label-max">
-      50
+      {{ max }}
     </span>
   </div>
 </template>
 <script>
-import { Dom } from "../utils/Dom.js";
+import Dom from "../utils/Dom.js";
 import { percent, fixed, isNumber } from "../utils/Math.js";
 var thumb, rail, fix;
 export default {

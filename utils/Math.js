@@ -11,11 +11,16 @@ function fixed(num, fix) {
 function isNumber(val) {
   var regPos = /^\d+(\.\d+)?$/; //非负浮点数
   var regNeg = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/; //负浮点数
-  if (regPos.test(val) || regNeg.test(val)) {
-    return true;
-  } else {
-    return false;
-  }
+  return regPos.test(val) || regNeg.test(val) || false;
 }
 
-export { percent, fixed, isNumber };
+var id = 0;
+function counter() {
+  return ++id;
+}
+
+function uid(name) {
+  return "p-" + name + "-" + counter();
+}
+
+export { percent, fixed, isNumber, uid, counter };

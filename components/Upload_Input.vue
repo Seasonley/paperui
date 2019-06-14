@@ -3,14 +3,14 @@
     class="p-input-file"
     type="file"
     multiple=""
-    aria-label="label"
+    :aria-label="label"
     @change="$emit('change', $event.target.files)"
   />
 </template>
 <script>
 export default {
   name: "Upload_Input",
-  props: ["value"],
+  props: ["value","label"],
   model: {
     prop: "value",
     event: "change"
