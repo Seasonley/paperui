@@ -35,6 +35,17 @@ var Dom = {
       // IE?
       document.selection.empty();
     }
+  },
+  trigger(el, type) {
+    try {
+      //w3c
+      var evt = document.createEvent("Event");
+      evt.initEvent(type, true, true);
+      el.dispatchEvent(evt);
+    } catch (e) {
+      //ie
+      el.fireEvent("on" + type);
+    }
   }
 };
 

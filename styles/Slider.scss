@@ -37,9 +37,11 @@
   position: absolute;
   top: 0;
   margin: -2px -8px;
+  cursor: pointer;
 }
 .p-slider-thumb:focus {
-  outline: 4px solid var(--gray);
+  outline: 0;
+  box-shadow: 0 0 0 4px var(--gray);
 }
 .p-slider-thumb-left {
   left: var(--min);
@@ -53,7 +55,7 @@
   align-self: center;
   color: var(--bright);
   font-weight: bold;
-  margin-top: -2em;
+  margin-top: -34px;
   padding: 0.2em;
   min-width: 16px;
   background: var(--dark);

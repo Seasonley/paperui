@@ -18,7 +18,7 @@
 
 .p-combobox-input {
   width: 100%;
-  padding-right: 1.5em;
+  padding-right: 1.8em;
 }
 .p-listbox,
 .p-option {
@@ -46,6 +46,9 @@
 .p-option:hover {
   background-color: var(--light-gray);
   outline: 0;
+}
+.p-option.focus {
+  outline: 4px solid var(--gray);
 }
 .p-option[aria-selected="true"] {
   filter: brightness(0.9);
@@ -94,4 +97,16 @@ select:-moz-focusring {
 }
 .p-combobox-placeholder {
   color: var(--shadow);
+}
+.p-combobox-input[contenteditable="true"]:empty:before {
+  content: attr(placeholder);
+  color: var(--shadow);
+  padding-right: 0.5em;
+}
+
+.p-combobox-input[contenteditable="true"] {
+  -webkit-user-modify: read-write-plaintext-only;
+}
+.p-combobox-input[contenteditable="true"] br {
+  display: none;
 }

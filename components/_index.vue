@@ -70,13 +70,7 @@
       unit="元"
     />
     <ComboBox :options="options" disabled placeholder="1111" multiple />
-    <ComboBox
-      :options="options"
-      kind="simple"
-      size="3"
-      placeholder="2222"
-      multiple
-    />
+    <ComboBox :options="options" kind="simple" size="3" placeholder="2222" />
     -
     <ComboBox :options="options" kind="dropdown" multiple placeholder="3333" />
     -
@@ -131,7 +125,34 @@ export default {
         {
           value: "jiangsu",
           label: "Jiangsu",
-          disabled: true,
+          disabled: false,
+          children: [
+            {
+              value: "nanjing",
+              label: "Nanjing",
+              children: [
+                {
+                  value: "zhonghuamen",
+                  label: "Zhong Hua Men"
+                }
+              ]
+            },
+            {
+              value: "nanjing2",
+              label: "Nanjing2",
+              children: [
+                {
+                  value: "2314234324",
+                  label: "aasad"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          value: "jiangsu",
+          label: "Jiangsu",
+          disabled: false,
           children: [
             {
               value: "nanjing",
