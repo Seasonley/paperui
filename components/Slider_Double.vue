@@ -4,7 +4,7 @@
       {{ min }}
     </span>
     <div class="p-rail" :style="`--min:${pctmin}%;--max:${pctmax}%`" ref="rail">
-      <button
+      <span
         v-if="!isNumber(this.value)"
         role="slider"
         tabindex="0"
@@ -20,8 +20,8 @@
         @keydown.up.prevent.stop="keyMove('min', step)"
         @keydown.down.prevent.stop="keyMove('min', -step)"
         ref="thumbLeft"
-      ></button>
-      <button
+      ></span>
+      <span
         role="slider"
         tabindex="0"
         class="p-slider-thumb p-slider-thumb-right"
@@ -36,7 +36,7 @@
         @keydown.up.prevent.stop="keyMove('max', step)"
         @keydown.down.prevent.stop="keyMove('max', -step)"
         ref="thumbRight"
-      ></button>
+      ></span>
     </div>
     <span class="p-rail-label-max">
       {{ max }}
