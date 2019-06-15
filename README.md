@@ -1,6 +1,6 @@
-# [-ิ_•ิ] PaperUI
+# [ˉε ˉ ] PaperUI
 
-Vue UI Components For Paperlike ( Electronic Ink Screen )
+Vue UI Components For Paperlike ( E-ink screen )
 
 ## Project Use
 
