@@ -83,14 +83,16 @@
     -
     <ComboBox :options="options" kind="simple" placeholder="5555" multiple /> -
 
-    <!-- <Tabs>
-      <Tablist kind="vertical">
-        <Tab></Tab>
-        <Tab selected></Tab>
-      </Tablist>
-      <Tabpanel>123</Tabpanel>
-      <Tabpanel>123</Tabpanel>
-    </Tabs> -->
+    <Tabs value="1">
+      <template #tablist>
+        <Tab value="1">1</Tab>
+        <Tab value="2" disabled>2</Tab>
+        <Tab value="3" selected>3</Tab>
+      </template>
+      <TabPanel>123</TabPanel>
+      <TabPanel>123</TabPanel>
+      <TabPanel>123</TabPanel>
+    </Tabs>
 
     <br />
   </div>
@@ -107,6 +109,9 @@ import Rate from "./Rate.vue";
 import Upload from "./Upload.vue";
 import Slider from "./Slider.vue";
 import ComboBox from "./ComboBox.vue";
+import Tabs from "./Tabs.vue";
+import TabPanel from "./TabPanel.vue";
+import Tab from "./Tab.vue";
 export default {
   name: "app",
   data() {
@@ -199,7 +204,10 @@ export default {
     Rate,
     Upload,
     Slider,
-    ComboBox
+    ComboBox,
+    TabPanel,
+    Tabs,
+    Tab
   }
 };
 </script>
