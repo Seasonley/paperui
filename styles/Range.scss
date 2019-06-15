@@ -6,13 +6,13 @@
   overflow: hidden;
   vertical-align: middle;
   position: relative;
-  color: var(--dark);
+  background: var(--dark);
 }
 
-.p-range::-webkit-slider-runnable-track,
-.p-range::-moz-range-track {
-  -webkit-appearance: none;
-  height: 10px;
+.p-range::-moz-range-track{
+  border: 2px solid var(--dark);
+    height: calc(100% - 4px);
+    mix-blend-mode: darken;
 }
 .p-range::-webkit-slider-thumb {
   -webkit-appearance: none;

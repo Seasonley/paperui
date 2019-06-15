@@ -27,6 +27,8 @@
 .p-tabpanel {
   border: 2px solid;
   display: flex;
+  width: 100%;
+  box-sizing: border-box;
 }
 .p-tabpanel[hidden] {
   display: none;
