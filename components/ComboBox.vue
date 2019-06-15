@@ -1,11 +1,12 @@
 <template>
   <div
+    v-blurclick="blurHandler"
     class="p-combobox-wrapper"
     :kind="kind"
     :style="`--size:${size}`"
     :multiple="multiple"
     :disabled="disabled"
-    @keydown.tab="expanded = false"
+    @keydown.tab="blurHandler"
     @keydown.enter.prevent.stop="toggleExpanded"
     @keydown.esc.prevent.stop="toggleExpanded(false)"
     @keydown.up.prevent="movePos('up')"
@@ -119,6 +120,7 @@ import blurclick from "../directives/blurclick.js";
 import string from "../filters/string.js";
 import optionFilter from "../filters/optionFilter.js";
 import Dom from "../utils/Dom.js";
+import { constants } from "crypto";
 export default {
   name: "ComboBox",
   props: {
@@ -202,14 +204,14 @@ export default {
     }
   },
   methods: {
+    blurHandler() {
+      this.expanded = false;
+    },
     getOptionId(col, i) {
       return `${this.listboxId}-${col}-${i}`;
     },
     focusHandler() {
       this.expanded = true;
-      this.$nextTick(function() {
-        document.addEventListener("click", this.blurclick);
-      });
     },
     toggleExpanded(need) {
       if (this.disabled !== undefined) return;
@@ -222,21 +224,6 @@ export default {
       } else {
         this.expanded = true;
         if (this.activeId) window[this.activeId].focus();
-      }
-    },
-    blurclick(event) {
-      var p = event.target,
-        isRoot = false;
-      while (p) {
-        if (p === this.$refs.root) {
-          isRoot = true;
-          break;
-        }
-        p = p.parentElement;
-      }
-      if (!isRoot) {
-        this.expanded = false;
-        document.removeEventListener("click", this.blurclick);
       }
     },
     optionSelectHandler(col, i, isKeyDown) {
