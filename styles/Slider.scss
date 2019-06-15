@@ -30,16 +30,19 @@
 .p-slider-thumb {
   display: flex;
   flex-direction: column;
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   background: var(--bright);
   border: 2px solid var(--dark);
   position: absolute;
   top: 0;
   margin: -2px -8px;
   cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
 }
-.p-slider-thumb:focus {
+.p-slider-thumb:focus,
+.p-slider-thumb:active {
   outline: 0;
   box-shadow: 0 0 0 4px var(--gray);
 }

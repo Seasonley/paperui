@@ -2,6 +2,7 @@
   display: inline-block;
   --size: 5;
   position: relative;
+vertical-align: middle;
 }
 .p-combobox-wrapper[disabled] .p-combobox-list {
   display: none;
@@ -17,8 +18,9 @@
 }
 
 .p-combobox-input {
-  width: 100%;
-  padding-right: 1.8em;
+  width: 100%;padding: 0 1.8em 0 0;
+vertical-align: middle;
+display: block;text-indent: 0.4em;
 }
 .p-listbox,
 .p-option {
@@ -102,6 +104,7 @@ select:-moz-focusring {
   content: attr(placeholder);
   color: var(--shadow);
   padding-right: 0.5em;
+      line-height: 20px;
 }
 
 .p-combobox-input[contenteditable="true"] {

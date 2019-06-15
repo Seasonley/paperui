@@ -4,7 +4,7 @@
       {{ min }}
     </span>
     <div class="p-rail" :style="`--min:${pctmin}%;--max:${pctmax}%`" ref="rail">
-      <a
+      <button
         v-if="!isNumber(this.value)"
         role="slider"
         tabindex="0"
@@ -14,14 +14,14 @@
         :aria-valuetext="valuenow[0] + unit"
         :aria-valuemax="valuenow[1]"
         :aria-label="label"
-        @mousedown.prevent="touchStart"
+        @mousedown="touchStart"
         @keydown.right.prevent.stop="keyMove('min', step)"
         @keydown.left.prevent.stop="keyMove('min', -step)"
         @keydown.up.prevent.stop="keyMove('min', step)"
         @keydown.down.prevent.stop="keyMove('min', -step)"
         ref="thumbLeft"
-      ></a>
-      <a
+      ></button>
+      <button
         role="slider"
         tabindex="0"
         class="p-slider-thumb p-slider-thumb-right"
@@ -30,13 +30,13 @@
         :aria-valuetext="valuenow[1] + unit"
         :aria-valuemax="max"
         :aria-label="label"
-        @mousedown.prevent="touchStart"
+        @mousedown="touchStart"
         @keydown.right.prevent.stop="keyMove('max', step)"
         @keydown.left.prevent.stop="keyMove('max', -step)"
         @keydown.up.prevent.stop="keyMove('max', step)"
         @keydown.down.prevent.stop="keyMove('max', -step)"
         ref="thumbRight"
-      ></a>
+      ></button>
     </div>
     <span class="p-rail-label-max">
       {{ max }}

@@ -82,6 +82,17 @@
     />
     -
     <ComboBox :options="options" kind="simple" placeholder="5555" multiple /> -
+
+    <!-- <Tabs>
+      <Tablist kind="vertical">
+        <Tab></Tab>
+        <Tab selected></Tab>
+      </Tablist>
+      <Tabpanel>123</Tabpanel>
+      <Tabpanel>123</Tabpanel>
+    </Tabs> -->
+
+    <br />
   </div>
 </template>
 <script>

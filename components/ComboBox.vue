@@ -24,7 +24,7 @@
         class="p-btn p-combobox-input"
         role="combobox"
         :aria-disabled="(disabled !== undefined) | string"
-        aria-autocomplete="tree"
+        aria-autocomplete="list"
         :aria-expanded="expanded | string"
         aria-haspopup="true"
         :aria-owns="listboxId"
@@ -73,12 +73,12 @@
     <div
       class="p-combobox-list"
       v-show="expanded"
-      role="tree"
+      :role="isMuti ? 'tree' : 'none'"
       :aria-expanded="expanded | string"
     >
       <ul
         class="p-listbox"
-        role="treeitem"
+        :role="isMuti ? 'treeitem' : 'list'"
         :id="listboxId"
         :aria-expanded="expanded | string"
         v-for="(listbox, col) in listboxs"
@@ -86,7 +86,7 @@
       >
         <li
           class="p-option"
-          role="treeitem"
+          :role="isMuti ? 'treeitem' : 'listitem'"
           :aria-level="col + 1"
           :aria-setsize="listboxs[col].length"
           :aria-posinset="i + 1"
@@ -150,6 +150,9 @@ export default {
     };
   },
   computed: {
+    isMuti() {
+      return this.multiple !== undefined;
+    },
     listboxs() {
       var { options, listboxId, selectedOption } = this;
       var { value, label, children, disabled } = this.destruct;

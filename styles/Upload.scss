@@ -3,7 +3,8 @@
   box-shadow: 0 0 0 2px var(--dark) inset;
   color: var(--shadow);
 }
-.p-input-file::-webkit-file-upload-button {
+.p-input-file::-webkit-file-upload-button,
+.p-input-file::-ms-browse {
   height: 24px;
   margin: 0;
   border: 2px solid var(--dark);
