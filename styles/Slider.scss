@@ -4,10 +4,11 @@
   width: 150px;
 }
 
-.p-rail-label-min,.p-rail-label-max {
+.p-rail-label-min,
+.p-rail-label-max {
   text-align: right;
   vertical-align: middle;
-  padding: 0 .8em;
+  padding: 0 0.8em;
 }
 
 .p-rail {
@@ -64,4 +65,5 @@
   background: var(--dark);
   text-align: center;
   border-radius: 2px;
+  box-shadow: 0 0 0 2px var(--bright);
 }

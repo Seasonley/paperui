@@ -10,7 +10,7 @@
 <script>
 export default {
   name: "Upload_Input",
-  props: ["value","label"],
+  props: ["value", "label"],
   model: {
     prop: "value",
     event: "change"

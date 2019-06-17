@@ -82,16 +82,22 @@
     />
     -
     <ComboBox :options="options" kind="simple" placeholder="5555" multiple /> -
-
-    <Tabs value="1">
+    {{ activeKey1 }}{{ activeKey2 }}
+    <Tabs :activeKey.sync="activeKey1">
       <template #tablist>
         <Tab value="1">1</Tab>
         <Tab value="2" disabled>2</Tab>
-        <Tab value="3" selected>3</Tab>
+        <Tab value="3">3</Tab>
       </template>
-      <TabPanel>123</TabPanel>
-      <TabPanel>123</TabPanel>
-      <TabPanel>123</TabPanel>
+      <TabPanel value="1">111</TabPanel>
+      <TabPanel value="2">222</TabPanel>
+      <TabPanel value="3">333</TabPanel>
+    </Tabs>
+
+    <Tabs :activeKey.sync="activeKey2">
+      <TabPanel tab="11" value="1" disabled><div>1111</div></TabPanel>
+      <TabPanel tab="22" value="2">2222</TabPanel>
+      <TabPanel tab="33" value="3">3333</TabPanel>
     </Tabs>
 
     <br />
@@ -121,6 +127,8 @@ export default {
       valnumarr: [0.3, 0.6],
       valslider: { min: 0, max: 1, step: 0.1 },
       valstr: "asd",
+      activeKey1: 1,
+      activeKey2: 1,
       options: [
         {
           value: "zhejiang",
@@ -141,29 +149,7 @@ export default {
         {
           value: "jiangsu",
           label: "Jiangsu",
-          disabled: false,
-          children: [
-            {
-              value: "nanjing",
-              label: "Nanjing",
-              children: [
-                {
-                  value: "zhonghuamen",
-                  label: "Zhong Hua Men"
-                }
-              ]
-            },
-            {
-              value: "nanjing2",
-              label: "Nanjing2",
-              children: [
-                {
-                  value: "2314234324",
-                  label: "aasad"
-                }
-              ]
-            }
-          ]
+          disabled: true
         },
         {
           value: "jiangsu",
@@ -176,7 +162,18 @@ export default {
               children: [
                 {
                   value: "zhonghuamen",
-                  label: "Zhong Hua Men"
+                  label: "Zhong Hua Men",
+                  disabled: true
+                }
+              ]
+            },
+            {
+              value: "nanjing2",
+              label: "Nanjing2",
+              children: [
+                {
+                  value: "2314234324",
+                  label: "aasad"
                 }
               ]
             }

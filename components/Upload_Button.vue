@@ -8,13 +8,13 @@
       onChange="{this.change}"
       @change="$emit('change', $event.target.files)"
     />
-    <span>{{label}}</span>
+    <span>{{ label }}</span>
   </span>
 </template>
 <script>
 export default {
   name: "Upload_Button",
-  props: ["value","label"],
+  props: ["value", "label"],
   model: {
     prop: "value",
     event: "change"
