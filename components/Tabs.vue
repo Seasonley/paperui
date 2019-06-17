@@ -1,22 +1,14 @@
-<template>
-  <div class="p-tabs-wrapper">
-    <div
-      class="p-tablist"
-      role="tablist"
-      aria-label="Entertainment"
-      @click="clickhandler"
-    >
-      <slot name="tablist"></slot>
-    </div>
-    <slot></slot>
-  </div>
-</template>
 <script>
+import Tabs_Simple from "./Tabs_Simple.vue";
+import Tabs_Custom from "./Tabs_Custom.vue";
 export default {
   name: "Tabs",
-  methods: {
-    clickhandler(e) {
-      console.log(e.target);
+  functional: true,
+  render(h, context) {
+    if (context.scopedSlots.tablist) {
+      return h(Tabs_Custom, context.data);
+    } else {
+      return h(Tabs_Simple, context.data, context.children);
     }
   }
 };
