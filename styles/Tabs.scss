@@ -11,7 +11,10 @@
   margin: 0 0.2em;
 }
 
-.p-tab:hover,
+.p-tab:hover {
+  cursor: pointer;
+  filter: brightness(0.92);
+}
 .p-tab:focus,
 .p-tab[aria-selected="true"] {
   outline: 4px solid var(--gray);
