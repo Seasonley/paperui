@@ -6,6 +6,7 @@
     :style="`--size:${size}`"
     :multiple="multiple"
     :disabled="disabled"
+    :id="listboxId"
     @keydown.tab="blurHandler"
     @keydown.enter.prevent.stop="toggleExpanded"
     @keydown.esc.prevent.stop="toggleExpanded(false)"
@@ -120,7 +121,6 @@ import blurclick from "../directives/blurclick.js";
 import string from "../filters/string.js";
 import optionFilter from "../filters/optionFilter.js";
 import Dom from "../utils/Dom.js";
-import { constants } from "crypto";
 export default {
   name: "ComboBox",
   props: {
@@ -156,7 +156,7 @@ export default {
       return this.multiple !== undefined;
     },
     listboxs() {
-      var { options, listboxId, selectedOption } = this;
+      var { options, selectedOption } = this;
       var { value, label, children, disabled } = this.destruct;
       if (!options.length) {
         //无选项
@@ -282,4 +282,3 @@ export default {
   filters: { string, optionFilter }
 };
 </script>
-

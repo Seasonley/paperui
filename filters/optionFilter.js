@@ -1,3 +1,3 @@
-export default function optionFilter(optionArr){
-	return optionArr.map(v=>v.label).join(' / ')
+export default function optionFilter(optionArr) {
+  return optionArr.map(v => v.label).join(" / ");
 }

@@ -4,32 +4,37 @@ var blurclick = {
   bind(el, { value: callback }) {
     var initActived;
     function blurcheck(event) {
-      var p = document.activeElement,
-        isRoot = false;
-      while (p) {
-        if (p === el) {
-          isRoot = true;
-          break;
+      var p,isRoot;
+      if(event.type==="keyup"&&event.key!=='Tab')return;
+      if(event.type==="keyup"&&event.key==='Tab'){
+        p = document.activeElement,
+          isRoot = false;
+        while (p) {
+          if (p === el) {
+            isRoot = true;
+            break;
+          }
+          p = p.parentElement;
         }
-        p = p.parentElement;
-      }
-      p = event.target;
-      while (p) {
-        if (p === el) {
-          isRoot = true;
-          break;
+      }else if(event.type==="click"){
+        p = event.target;
+        while (p) {
+          if (p === el) {
+            isRoot = true;
+            break;
+          }
+          p = p.parentElement;
         }
-        p = p.parentElement;
       }
-      if (!initActived) {
+      if (!initActived&&isRoot) {
         initActived = isRoot;
       }
-      if (initActived && !isRoot) {
-        initActived = undefined;
+      if (initActived&& !isRoot) {
+        initActived = false;
         callback(el);
       }
     }
-    Dom.on("keydown", blurcheck);
+    Dom.on("keyup", blurcheck);
     Dom.on("click", blurcheck);
   }
 };
