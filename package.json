@@ -1,20 +1,23 @@
 {
-  "name": "sui",
+  "name": "paperui",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev-css": "webpack-dev-server --config build.dev-css.js",
-    "dev-vue": "vue-cli-service serve build.dev-vue.js",
-    "build-vue": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "dev-vue": "vue-cli-service serve",
+    "test-unit": "vue-cli-service test:unit tests/unit/*.js",
+    "test-e2e": "vue-cli-service test:e2e",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-e2e-nightwatch": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-plugin-unit-mocha": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
@@ -22,45 +25,27 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.1",
     "chai": "^4.1.2",
-    "css-loader": "^2.1.1",
+    "css-loader": "^3.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "extract-text-webpack-plugin": "^3.0.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.12.0",
+    "lint-staged": "^8.1.5",
+    "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "svg-url-loader": "^2.3.2",
+    "svg-sprite-loader": "^4.1.6",
+    "svg-url-loader": "^2.3.3",
     "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.32.2",
-    "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.4.1",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-cli": "^3.3.4"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "@vue/prettier"
-    ],
-    "rules": {
-      "no-console": "off"
-    },
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
 }

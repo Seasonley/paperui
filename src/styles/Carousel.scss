@@ -1,0 +1,139 @@
+.p-carousel {
+  background: rgba(0, 0, 0, 0.1);
+}
+.p-carousel-item {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.p-carousel-pause {
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+}
+
+.p-carousel-item.active {
+  display: block;
+}
+.p-carousel-inner {
+  position: relative;
+}
+
+.p-carousel-pause[aria-disabled="true"] {
+  color: #666;
+}
+
+.p-carousel-pause:focus {
+  opacity: 1;
+  z-index: 1;
+}
+
+.p-carousel-image,
+.p-carousel-image img {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.p-carousel-image a:focus img {
+  border: 2px solid var(--dark);
+}
+
+.p-carousel-caption a {
+  text-decoration: underline;
+  border: none;
+}
+
+.p-carousel-caption a {
+  color: #fff;
+  font-weight: 600;
+}
+
+.p-carousel-caption a:focus,
+.p-carousel-caption a:hover {
+  outline: solid 2px #fff;
+  outline-offset: 1px;
+}
+
+.p-carousel-caption p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.p-carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 0;
+  left: 15%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.p-carousel-caption {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-shadow: none;
+}
+
+.p-carousel:hover .p-carousel-caption,
+.p-carousel-item.focus .p-carousel-caption {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.p-carousel-inner,
+.p-carousel-item,
+.p-carousel-items,
+.p-carousel-slide {
+  height: 100%;
+}
+
+.p-carousel-control {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  font-size: 200%;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.p-carousel-control:focus {
+  border: 2px solid var(--bright);
+  outline: 2px solid var(--dark);
+}
+
+.p-carousel-control.previous {
+  bottom: 0;
+  width: 40px;
+}
+
+.p-carousel-control.next {
+  right: 0;
+  bottom: 0;
+  width: 40px;
+}
+
+.p-icon-arrow_right,
+.p-icon-arrow_left {
+  position: absolute;
+  display: block;
+  top: calc(50% - 20px);
+  height: 40px;
+  width: 40px;
+  background-position: center;
+  background-size: 80%;
+  filter: invert(1);
+}
+.p-icon-arrow_left {
+  background-image: url(./assets/chevrons_left.svg);
+}
+.p-icon-arrow_right {
+  background-image: url(./assets/chevrons_right.svg);
+}

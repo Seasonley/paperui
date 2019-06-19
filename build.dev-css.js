@@ -8,7 +8,7 @@ module.exports = {
   devtool: "inline-source-map",
   mode: "development",
   entry: {
-    app: "./styles/_dev.js"
+    app: "./src/_dev.js"
   },
   plugins: [
     new HtmlWebpackPlugin({
