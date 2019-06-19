@@ -35,7 +35,6 @@ describe("ComboBox", () => {
     it(`from: unfocused; \n\t input:click|focus;`, () => {
       const rooter = mount(ComboBox, { kind: "dropdown" });
       rooter.find({ ref: "input" }).trigger("focus");
-
       expect(rooter.vm.$data.expanded).to.eq(true);
     });
   });

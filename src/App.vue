@@ -75,6 +75,7 @@
     <ComboBox :options="options" kind="dropdown" multiple placeholder="3333" />
     -
     <ComboBox
+      class="test-dropdownlistComboBox"
       :options="options"
       kind="dropdownlist"
       placeholder="4444"

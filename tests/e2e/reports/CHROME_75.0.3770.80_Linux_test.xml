@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="test"
+    errors="0" failures="1" hostname="" id="" package="test" skipped="0"
+    tests="1" time="2.418" timestamp="Wed, 19 Jun 2019 07:10:37 GMT">
+  
+    <testcase name="test-dropdownlistComboBox" classname="test" time="2.418" assertions="3">
+
+    
+
+      <failure message="Testing if element &lt;button[role=&#39;combobox&#39;]&gt; has count: 1">    at Object.test-dropdownlistComboBox (/home/seasonley/workplace/github/paperui/tests/e2e/specs/test.js:11:15)
+    at processTicksAndRejections (internal/process/task_queues.js:79:9)</failure>
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>
