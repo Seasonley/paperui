@@ -10,6 +10,10 @@
 export default {
   name: "Check",
   props: {
+    /**
+     * @model
+     * The check state for the checkbox.
+     */
     checked: Boolean
   },
   model: {

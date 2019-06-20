@@ -3,41 +3,29 @@
 Vue UI Components For Paperlike ( E-ink screen )
 
 ## Project setup
+
 ```
 npm install
 ```
 
-## Project Use
+## Components Reference
 
-develop **css** with hmr `npm run dev-css`npm 
+## Developer Guide
 
-develop **vue** with hmr `npm run dev-vue`
+Develop **css** with HMR `npm run dev-css`
 
+Develop **vue** with HMR `npm run dev-vue`
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Run end-to-end tests `npm run test-e2e`
 
-### Run your tests
-```
-npm run test
-```
+Run unit tests `npm run test-unit`
 
-### Lints and fixes files
-```
-npm run lint
-```
+Edit **doc** `npm run dev-doc`
 
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
+Build **doc** `npm run build-doc`
 
-### Run your unit tests
-```
-npm run test:unit
-```
+Vue Customize configuration: See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Doc Customize configuration: See [Vue Styleguidist](https://vue-styleguidist.github.io).
+
+Compiles and minifies for production `npm run build`
