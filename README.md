@@ -2,6 +2,9 @@
 
 Vue UI Components For Paperlike ( E-ink screen )
 
+
+<img src="https://raw.githubusercontent.com/Seasonley/paperui/master/banner.png" alt="UI demo picture for PaperUI">
+
 ## Project setup
 
 ```
