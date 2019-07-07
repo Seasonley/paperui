@@ -100,6 +100,7 @@
       <TabPanel tab="33" value="3">3333</TabPanel>
     </Tabs>
 
+    <MenuBar :menuitems="menuitems"></MenuBar>
     <br />
   </div>
 </template>
@@ -118,6 +119,7 @@ import ComboBox from "./ComboBox.vue";
 import Tabs from "./Tabs.vue";
 import TabPanel from "./TabPanel.vue";
 import Tab from "./Tab.vue";
+import MenuBar from "./Menu.vue";
 export default {
   name: "app",
   data() {
@@ -179,10 +181,37 @@ export default {
             }
           ]
         }
+      ],
+      menuitems: [
+        {
+          label: "size",
+          children: [
+            { label: "action", type: "action", method: "getMenuitem" },
+            { label: "checkbox", type: "checkbox", method: "getMenuitem" },
+            { label: "radio", type: "radio", method: "getMenuitem" },
+            { label: "link", type: "link", href: "zhihu.com" },
+            { type: "separator" },
+            {
+              label: "Text Color",
+              type: "group",
+              children: [
+                {
+                  label: "Black",
+                  type: "radio",
+                  method: "getMenuitem",
+                  checked: false
+                }
+              ]
+            }
+          ]
+        }
       ]
     };
   },
   methods: {
+    getMenuitem(data) {
+      console.log(data);
+    },
     change(e) {
       console.log(e);
     },
@@ -204,7 +233,8 @@ export default {
     ComboBox,
     TabPanel,
     Tabs,
-    Tab
+    Tab,
+    MenuBar
   }
 };
 </script>

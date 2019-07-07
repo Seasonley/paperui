@@ -3,7 +3,7 @@ ul[role="menubar"] {
   padding: 0;
   list-style: none;
   border: 2px solid;
-  height: 28px;
+  min-height: 28px;
   line-height: 28px;
 }
 
@@ -15,7 +15,6 @@ ul[role="menubar"] [role="separator"] {
   border-top: 1px solid var(--dark);
   padding: 0;
 }
-ul[role="menubar"] a[role="menuitem"]:hover + ul[role="menu"],
 ul[role="menubar"] a[role="menuitem"]:focus + ul[role="menu"] {
   display: block;
   z-index: 3;

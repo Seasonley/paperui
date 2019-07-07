@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name PaperUI build.vue.js",
     "lint": "vue-cli-service lint",
     "dev-css": "webpack-dev-server --config build.dev-css.js",
     "dev-vue": "vue-cli-service serve",
