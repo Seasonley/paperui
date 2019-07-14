@@ -33,9 +33,9 @@
 
     <Group>
       <Radio value="tmp" name="r3" v-model="valstr" />
-      <Radio value="asd" name="r3" v-model="valstr" /> </Group
-    >{{ valstr }}
-
+      <Radio value="asd" name="r3" v-model="valstr" />
+    </Group>
+    {{ valstr }}
     <Input placeholder="input" v-model="valnum" />
     <Input placeholder="input" v-model="valnum" disabled />
 
@@ -70,19 +70,17 @@
       unit="元"
     />
     <ComboBox :options="options" disabled placeholder="1111" multiple />
-    <ComboBox :options="options" kind="simple" size="3" placeholder="2222" />
-    -
-    <ComboBox :options="options" kind="dropdown" multiple placeholder="3333" />
-    -
+    <ComboBox :options="options" kind="simple" size="3" placeholder="2222" />-
+    <ComboBox :options="options" kind="dropdown" multiple placeholder="3333" />-
     <ComboBox
       class="test-dropdownlistComboBox"
       :options="options"
       kind="dropdownlist"
       placeholder="4444"
       multiple
-    />
+    />-
+    <ComboBox :options="options" kind="simple" placeholder="5555" multiple />
     -
-    <ComboBox :options="options" kind="simple" placeholder="5555" multiple /> -
     {{ activeKey1 }}{{ activeKey2 }}
     <Tabs :activeKey.sync="activeKey1">
       <template #tablist>
@@ -96,10 +94,14 @@
     </Tabs>
 
     <Tabs :activeKey.sync="activeKey2">
-      <TabPanel tab="11" value="1" disabled><div>1111</div></TabPanel>
+      <TabPanel tab="11" value="1" disabled>
+        <div>1111</div>
+      </TabPanel>
       <TabPanel tab="22" value="2">2222</TabPanel>
       <TabPanel tab="33" value="3">3333</TabPanel>
     </Tabs>
+
+    <MenuBar :menuitems="menuitems" title="Text Formatting" />
 
     <br />
   </div>
@@ -119,6 +121,7 @@ import ComboBox from "./components/ComboBox.vue";
 import Tabs from "./components/Tabs.vue";
 import TabPanel from "./components/TabPanel.vue";
 import Tab from "./components/Tab.vue";
+import MenuBar from "./components/MenuBar.vue";
 export default {
   name: "app",
   data() {
@@ -180,6 +183,36 @@ export default {
             }
           ]
         }
+      ],
+      menuitems: [
+        {
+          label: "Font",
+          name: "font",
+          children: [
+            { type: "checkbox", label: "Bold", name: "blod", value: true },
+            { type: "checkbox", label: "Italic", name: "italic", value: false },
+            { type: "separator" },
+            {
+              label: "Text Color",
+              children: [
+                { type: "radio", label: "Black", name: "black", value: true },
+                { type: "radio", label: "Blue", name: "blue", value: false },
+                { type: "radio", label: "Red", name: "red", value: false },
+                { type: "radio", label: "Green", name: "green", value: false }
+              ]
+            },
+            { type: "separator" },
+            {
+              label: "Text Decoration",
+              children: [
+                { type: "radio", label: "None", value: true },
+                { type: "radio", label: "Overline", value: false },
+                { type: "radio", label: "Line-through", value: false },
+                { type: "radio", label: "Underline", value: false }
+              ]
+            }
+          ]
+        }
       ]
     };
   },
@@ -205,7 +238,8 @@ export default {
     ComboBox,
     TabPanel,
     Tabs,
-    Tab
+    Tab,
+    MenuBar
   }
 };
 </script>
